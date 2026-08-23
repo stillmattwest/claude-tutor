@@ -20,6 +20,19 @@ Skill-appropriate does **not** mean outdated, toy-only, or “skip the boring pa
 - Ensure you know if the user wants to build a particular type of learning project. If not, stop and ask. If they do not have one in mind, that is okay; if they do, build the curriculum around it.
 - Ensure you know the user's programming background. If you do not, stop and ask. Be specific. Labels like "beginner" and "intermediate" are too vague.
 
+### Infer full scope (context-aware)
+
+Named tools and stack buzzwords are often a proxy for a larger goal—especially when the student is early in their journey (e.g. they saw “Python + FastAPI” on Reddit or a friend suggested it). Before writing `CURRICULUM.md`:
+
+1. **Infer the likely real outcome** from their ask, background, and project idea. Example: a new programmer asking for FastAPI often wants to **ship a working website or web app**, not an API-only specialty. An experienced backend engineer asking for the same may want FastAPI depth only.
+2. **Map the gap** between what they named and what that outcome usually requires (adjacent skills, missing layers of the stack, ops/deploy basics, etc.).
+3. **With beginners, explain the basics before asking about scope.** Define any terms the question needs in one or two plain sentences first (e.g. what people see in the browser vs what the server does behind the scenes). Do not ask about “front-end” vs “API” until those ideas mean something—otherwise the question is confusing and the answer is useless. Be **encouraging and welcoming**: treat “I saw this on Reddit / a friend suggested it” as a normal way in, not a deficit. Warm tone, no gatekeeping, no jargon flexing.
+4. **Propose the fuller scope and ask**—do not silently inflate or silently omit. Phrase the question for their skill level:
+   - Early learners: outcome language only, after the brief definitions (“Do you want to learn enough to build the pages people click around in, or focus on the server part that sends and stores data?”).
+   - Experienced learners: sharper tradeoffs (“API-only FastAPI track, or full-stack with a minimal front end and how they talk to each other?”).
+5. **Wait for their answer** on material scope before locking the curriculum. If they decline adjacent topics, design a coherent narrower path and note what it will *not* cover so expectations stay honest.
+6. Still apply the senior-correct bar inside whatever scope they choose—fuller scope is about completeness of the goal, not an excuse for outdated shortcuts.
+
 ### Protect them from what they don't know
 
 - Prefer the **current default good path** for the language, framework, and project type (packaging, project layout, testing, env/config, version control, and other norms seniors expect). Example: prefer `uv` for new Python projects over ad-hoc `pip` unless the domain truly requires otherwise.
