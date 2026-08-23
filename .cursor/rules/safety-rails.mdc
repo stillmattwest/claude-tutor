@@ -1,0 +1,11 @@
+---
+description: Safety rails for tutoring — secrets, destructive commands, installs, project bounds
+alwaysApply: true
+---
+
+# Safety Rails
+
+- Do not put secrets in repo files. Warn before creating or committing `.env`, credentials, API keys, or tokens.
+- Do not run destructive git or shell commands unless the student clearly asks (e.g. hard reset, force push, `rm -rf`).
+- Do not start unbounded installs or long-running servers without asking first.
+- Stay inside the learning project folder; do not modify unrelated system or home-directory config unless the student asks.

@@ -15,13 +15,25 @@ Cursor will ask about your background and skill level, then write a `CURRICULUM.
 
 After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, check understanding, give exercises you type yourself, and advance only when the lesson’s end goal is met.
 
+### Useful skills
+
+| Skill | When to use |
+|-------|-------------|
+| `/curriculum` | Design or fully redesign the course |
+| `/adjust-curriculum` | Mid-course pace, skip, or capstone changes |
+| `/stuck` | You’re blocked and want a hint, not the full answer |
+| `/check-understanding` | Quiz / teach-back on the current lesson |
+| `/complete-lesson` | Lesson end goal met (tutor usually runs this) |
+| `/section-review` | Section end goal met or you want a section checkpoint |
+
 ## What you get
 
 - **Progression with checkpoints** — Each section and lesson has a start point and a verifiable end goal. A section’s end goal is the next section’s start point.
 - **No black boxes** — When a framework or tool shows up, Cursor explains how it works in plain language before treating it as magic.
 - **Active practice** — You write the code. Cursor reviews it in chat, names problems, and lets you fix them.
-- **Lesson summaries** — After each lesson, Cursor writes a short summary under `lesson_summaries/` you can revisit later.
+- **Hint ladder when stuck** — Smallest useful hint first; full solutions only if you ask.
+- **Lesson summaries** — After each lesson, a short summary under `lesson_summaries/` you can revisit later.
 
 ## Status
 
-Early days: one rule (`tutor-mode`) and one skill (`curriculum`). In practice that already produces a usable learning path — more coming later.
+Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, and section review — with safety rails and a fixed lesson-summary format.

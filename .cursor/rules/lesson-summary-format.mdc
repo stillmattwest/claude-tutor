@@ -1,0 +1,31 @@
+---
+description: Lesson summary template for files under lesson_summaries/
+globs: lesson_summaries/**/*.md
+alwaysApply: false
+---
+
+# Lesson Summary Format
+
+When creating or editing files under `lesson_summaries/`, use this structure:
+
+```markdown
+# N.N Lesson title
+
+## Concepts
+
+- ...
+
+## Commands / APIs
+
+- ...
+
+## What you built
+
+- ...
+
+## Open questions
+
+- ...
+```
+
+Omit **Open questions** if there are none. Keep the summary short enough to skim later.

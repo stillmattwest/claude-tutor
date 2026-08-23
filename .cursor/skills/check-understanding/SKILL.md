@@ -1,0 +1,24 @@
+---
+name: check-understanding
+description: Quizzes the student on the current or last completed lesson and remediates gaps. Use when the student asks to quiz them, check understanding, or review what they learned.
+---
+
+# Check Understanding
+
+## Instructions
+
+1. Identify the target: the **current lesson** in `CURRICULUM.md`, or the last completed lesson if they ask to review that.
+2. Ask 3–5 short questions (teach-back, “what would happen if…”, or “why this way”). Prefer spoken/written answers over coding at first.
+3. Score each idea briefly: solid / shaky / missing. Name misconceptions in plain language.
+4. Give **one** remediation exercise they type themselves for the weakest gap.
+5. Do **not** advance the curriculum or write a lesson summary. That happens only when the lesson end goal is met via `complete-lesson`.
+
+## Do not
+
+- Turn the quiz into a full new lesson on unrelated topics.
+- Paste long solutions when checking understanding; ask them to explain or try first.
+
+## Examples
+
+- Student: "Quiz me." → Questions on the current lesson’s end goal concepts, then one fix-up exercise if needed.
+- Student: "Do I get lesson 1.2?" → Clarify this skill does not advance lessons; report readiness against the end goal only.
