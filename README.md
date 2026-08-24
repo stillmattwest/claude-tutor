@@ -22,6 +22,7 @@ After that, chat normally. The tutor rule keeps Cursor on the current lesson: ex
 | `/curriculum` | Design or fully redesign the course |
 | `/adjust-curriculum` | Mid-course pace, skip, or capstone changes |
 | `/stuck` | You’re blocked and want a hint, not the full answer |
+| `/code-review` | Feedback on exercise code (one win, one improvement) |
 | `/check-understanding` | Quiz / teach-back on the current lesson |
 | `/complete-lesson` | Lesson end goal met (tutor usually runs this) |
 | `/section-review` | Section end goal met or you want a section checkpoint |
