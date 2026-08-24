@@ -1,6 +1,6 @@
 ---
 name: code-review
-description: Gives skill- and lesson-appropriate code review using one win and one improvement. Use when reviewing student exercise code, when the student asks for a code review, or when the tutor checks work they were asked to write.
+description: Gives skill- and lesson-appropriate code review using one win and one improvement; explains why broken code failed and shows parallel examples, not the exercise answer. Use when reviewing student exercise code, when the student asks for a code review, or when the tutor checks work they were asked to write.
 ---
 
 # Code Review
@@ -14,9 +14,32 @@ description: Gives skill- and lesson-appropriate code review using one win and o
    3. **Ceiling** — beginner / intermediate / advanced scopes below are a **maximum** depth, not a target. Prefer the lower ceiling when unsure.
 3. If skill level is still unclear, infer a ceiling from how early/late this topic sits in a typical path for this stack—then still filter by what *this* lesson taught.
 4. Apply **One Win, One Improvement**: name one thing they did well, and the single most important fix in scope. If nothing needs fixing at this ceiling, say one concrete win (or that it looks good for this exercise) and move on.
-5. After naming the improvement, **let them fix it** (aligned with tutor mode). Confirm when it looks good. Do not open a second round of new nits on the same exercise unless they ask or a new bug appears.
-6. Define jargon (DRY, SRP, etc.) in one plain sentence if it may be new at their level.
-7. Stay encouraging and specific. Point at the symptom or location; prefer a small hint over pasting a full rewrite—unless they explicitly ask you to write the code.
+5. When something **did not work** (error, wrong output, or logic that misses the goal), follow **Explain why it failed** below—not just “that’s wrong.”
+6. After naming the improvement, **let them fix it** (aligned with tutor mode). Confirm when it looks good. Do not open a second round of new nits on the same exercise unless they ask or a new bug appears.
+7. Define jargon (DRY, SRP, etc.) in one plain sentence if it may be new at their level.
+8. Stay encouraging and specific. Point at the symptom or location; prefer a small hint or illustrative example over pasting a full rewrite of their exercise—unless they explicitly ask you to write the code.
+
+## Explain why it failed
+
+When code errors, misbehaves, or misses the exercise goal:
+
+1. **Infer intent** — What were they trying to accomplish? Read their names, structure, and comments; don’t assume malice or carelessness.
+2. **Acknowledge it** — Say you see the goal in plain language (“You’re trying to loop until the user types quit—that part is right.”).
+3. **Explain why it didn’t work** — Tie cause to effect: what the runtime/language actually did vs what they expected. Use their skill level; no jargon without a one-line definition.
+4. **Show the correct *pattern* with a tiny parallel example** — Same idea, different names/context so it is **not** their exercise answer. Mark it clearly as an illustration, not something to paste.
+5. **Hand back the fix** — Ask them to apply the pattern to their code. Do not drop in the finished solution unless they explicitly ask.
+
+Example shape (not their exact code):
+
+```python
+# Illustration only — not your exercise
+while True:
+    answer = input("Continue? ")
+    if answer == "quit":
+        break
+```
+
+Then: “Try applying that loop/break shape to your version.”
 
 ## Feedback ceilings
 
@@ -44,6 +67,7 @@ description: Gives skill- and lesson-appropriate code review using one win and o
 
 ## Do not
 
+- Paste the student’s exercise solution as the “example”—illustrations must be parallel, not the answer.
 - Stack multiple improvements or re-review the same snippet for new style nits after they fixed the one you named.
 - Drop a critique because they pushed back with a weak argument—explain the practice briefly, then ask whether they want to fix it or move on. Moving on is fine.
 - Dig in if they show your critique was wrong—acknowledge and move on.
@@ -52,6 +76,7 @@ description: Gives skill- and lesson-appropriate code review using one win and o
 
 ## Examples
 
-- Beginner finishes a first `if`/`else` exercise → Win: clear condition. Improvement: the branch that never runs—ask them to fix; no Big-O talk.
+- Beginner finishes a first `if`/`else` exercise → Win: clear condition. Improvement: the branch that never runs—acknowledge the goal, explain why the condition is always true, show a tiny `if x > 0:` illustration; they fix their line.
 - Intermediate API handler works but repeats validation three times → Win: correct status codes. Improvement: one shared check (briefly what DRY means); they refactor.
+- Student’s loop never exits → “You want to stop on ‘quit’—good. The problem is you used `=` instead of `==`, so Python assigns instead of comparing.” Show a minimal `while`/`break` illustration; they update their loop.
 - Student: "Just fix it for me." → Only if they explicitly want you to write the code; then resume tutor mode.

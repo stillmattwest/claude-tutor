@@ -13,7 +13,7 @@ Rules and skills that turn Cursor into a curriculum designer and coding mentor f
 
 Cursor will ask about your background and skill level, then write a `CURRICULUM.md` divided into sections and lessons.
 
-After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, check understanding, give exercises you type yourself, and advance only when the lesson’s end goal is met.
+After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself, and advance only when the lesson’s end goal is met.
 
 ### Useful skills
 
@@ -21,6 +21,7 @@ After that, chat normally. The tutor rule keeps Cursor on the current lesson: ex
 |-------|-------------|
 | `/curriculum` | Design or fully redesign the course |
 | `/adjust-curriculum` | Mid-course pace, skip, or capstone changes |
+| `/teach-lesson` | Start or continue the current lesson (tutor usually runs this) |
 | `/stuck` | You’re blocked and want a hint, not the full answer |
 | `/code-review` | Feedback on exercise code (one win, one improvement) |
 | `/check-understanding` | Quiz / teach-back on the current lesson |
