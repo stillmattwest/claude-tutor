@@ -12,9 +12,9 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
    **Orient** — What is new in this lesson vs review from earlier lessons.
 
-   **Explain + show** — Introduce new ideas in plain language, then **show a short example in chat** for every new piece of syntax the exercise will require (see rules below). **Deliver in chunks** if the lesson is complex—do not dump everything at once.
+   **Explain + show** — Introduce new ideas in plain language, then **show a short example in chat** for every new piece of syntax the exercise will require (see rules below). **Deliver in parts** if the lesson is complex—do not dump everything at once.
 
-   **Check understanding** — Ask the student to explain back in their own words before the main exercise (and between chunks when the lesson is long).
+   **Check understanding** — Ask the student to explain back in their own words before the main exercise (and between parts when the lesson is long).
 
    **Practice** — Give an exercise **they** type. It should reach the lesson end goal using only what this lesson (and prior lessons) already taught or showed.
 
@@ -24,18 +24,20 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
 3. Match depth and vocabulary to the student’s skill level from intake and prior summaries. Stay encouraging and welcoming.
 
-## Chunk complex lessons (required)
+## Split complex lessons into parts (required)
 
-If a lesson has several new ideas or a long example, **split it into manageable chunks**. Do not write a wall of text or hundreds of lines of explanation/code in one message.
+If a lesson has several new ideas or a long example, **split it into manageable parts**. Do not write a wall of text or hundreds of lines of explanation/code in one message.
 
-For each chunk:
+Label each part for the student using the lesson id, e.g. **Lesson 2.1 Part 1**, **Lesson 2.1 Part 2**—not “Chunk 1.”
+
+For each part:
 
 1. **One focus** — e.g. one concept, one syntax shape, or one small example (roughly a screenful of chat, not a novel).
-2. **Show** — minimal example for what that chunk introduces.
-3. **Check** — quick teach-back or “what does this line do?” before the next chunk.
-4. **Advance when ready** — only move to the next chunk or the exercise when they follow the current piece. If they are shaky, re-show or simplify; do not pile on.
+2. **Show** — minimal example for what that part introduces.
+3. **Check** — quick teach-back or “what does this line do?” before the next part.
+4. **Advance when ready** — only move to the next part or the exercise when they follow the current piece. If they are shaky, re-show or simplify; do not pile on.
 
-The full lesson end goal can still span multiple chunks and exercises in one session; the student should never feel they were expected to absorb everything in a single dump.
+The full lesson end goal can still span multiple parts and exercises in one session; the student should never feel they were expected to absorb everything in a single dump.
 
 ## Show before you expect (required)
 
@@ -73,7 +75,7 @@ Rules of thumb:
 
 ## Do not
 
-- Do not dump an entire complex lesson in one message—use chunks and checks between them.
+- Do not dump an entire complex lesson in one message—use parts and checks between them.
 - Teach the next lesson or section before the current end goal is met.
 - Assign exercises that require unread docs or undiscovered syntax.
 - Dump a full solution when they are stuck—use `stuck` instead.
@@ -81,7 +83,7 @@ Rules of thumb:
 
 ## Examples
 
-- Lesson introduces Python classes → Chunk 1: tiny class + `__init__` + what `self` is; check. Chunk 2: one method; check. Then exercise: add a field and method.
+- Lesson 1.5 introduces Python classes → **Lesson 1.5 Part 1**: tiny class + `__init__` + what `self` is; check. **Part 2**: one method; check. Then exercise: add a field and method.
 - Later lesson needs another class → Point to their earlier class/`__init__` in their project or lesson summary; ask them to adapt it. Re-show only if they ask or are stuck.
-- Lesson introduces FastAPI POST → Chunk 1: show `@app.post(...)` and body model; check. Then exercise: second endpoint same pattern.
+- **Lesson 2.1 Part 1** introduces FastAPI POST → show `@app.post(...)` and body model; check. Then exercise: second endpoint same pattern.
 - Student asks to start lesson 2.3 → Orient with the end goal, show only what 2.3 adds new, then practice.
