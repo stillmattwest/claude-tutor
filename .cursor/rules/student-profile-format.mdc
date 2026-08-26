@@ -1,12 +1,12 @@
 ---
-description: Living student profile template for STUDENT.md
-globs: STUDENT.md
+description: Living student profile template for .data/STUDENT.md
+globs: .data/STUDENT.md
 alwaysApply: false
 ---
 
 # Student Profile Format
 
-When creating or editing `STUDENT.md`, use this structure. Keep narrative sections short; the **Skills** table is the lookup.
+When creating or editing `.data/STUDENT.md`, use this structure. Keep narrative sections short; the **Skills** table is the lookup.
 
 ```markdown
 # Student
@@ -49,7 +49,7 @@ Status is one of: `not started` · `learning` · `shaky` · `mastered`
 
 **Skills table rules**
 
-- One row per lesson in `CURRICULUM.md`. **ID** is the lesson number (`1.2`). **Skill** is the lesson title (shorten if needed).
+- One row per lesson in `curriculum/CURRICULUM.md`. **ID** is the lesson number (`1.2`). **Skill** is the lesson title (shorten if needed).
 - Look up a skill by **ID**. Update that row in place; never add a second row for the same ID.
 - **Note** is optional and short (what was hard, or `—` if nothing to say).
 - **Strengths** / **Growth areas** are only for habits that are not a single curriculum row (e.g. “reads error messages before asking”). Do not duplicate the table there.

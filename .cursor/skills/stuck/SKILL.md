@@ -7,7 +7,7 @@ description: Helps a blocked student with a hint ladder without dumping the full
 
 ## Instructions
 
-1. Confirm the current lesson end goal in one sentence (from `CURRICULUM.md`).
+1. Confirm the current lesson end goal in one sentence (from `curriculum/CURRICULUM.md`).
 2. Ask what they tried and what happened (error text, unexpected behavior, or where they froze). If they already said, skip this.
 3. Give the **smallest** next hint that unblocks progress — a question, a concept nudge, or where to look — not the finished code.
 4. If they are still stuck after that hint, escalate one step (narrower hint or a short example of a *related* idea). Do not paste their full solution unless they **explicitly** ask you to write the code.
@@ -16,7 +16,7 @@ description: Helps a blocked student with a hint ladder without dumping the full
 ## Do not
 
 - Skip straight to the answer on the first request for help.
-- Rewrite their project files unless they explicitly ask.
+- Rewrite their project files in `workspace/` unless they explicitly ask.
 - Change the curriculum or jump to a later lesson.
 
 ## Examples

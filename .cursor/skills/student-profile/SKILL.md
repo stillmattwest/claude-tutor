@@ -1,15 +1,15 @@
 ---
 name: student-profile
-description: Maintains a living STUDENT.md (name, strengths, growth areas, and a skills table keyed by curriculum lesson ID). Use when starting a session, during curriculum intake, after a lesson/quiz/section review, or when the student shares their name or learning preferences.
+description: Maintains a living .data/STUDENT.md (name, strengths, growth areas, and a skills table keyed by curriculum lesson ID). Use when starting a session, during curriculum intake, after a lesson/quiz/section review, or when the student shares their name or learning preferences.
 ---
 
 # Student Profile
 
-A good tutor remembers the person, not just the current lesson. `STUDENT.md` is the durable student picture across chats. Curriculum skill status lives in the **Skills** table — look up a lesson by **ID**.
+A good tutor remembers the person, not just the current lesson. `.data/STUDENT.md` is the durable student picture across chats. Curriculum skill status lives in the **Skills** table — look up a lesson by **ID**.
 
 ## When to read
 
-Read `STUDENT.md` (if it exists) before teaching, reviewing, quizzing, or adjusting the curriculum. Use the name they asked you to use.
+Read `.data/STUDENT.md` (if it exists) before teaching, reviewing, quizzing, or adjusting the curriculum. Use the name they asked you to use.
 
 From the **Skills** table:
 
@@ -21,9 +21,9 @@ If the file is missing, continue with the lesson or intake. Create it as soon as
 
 ## When to write
 
-Update `STUDENT.md` when you have **new evidence**, without waiting to be asked:
+Update `.data/STUDENT.md` when you have **new evidence**, without waiting to be asked:
 
-- **Intake / curriculum design** — create the file (name, background) and a **Skills** table with **one row per lesson** in `CURRICULUM.md`. Status `mastered` if they already demonstrated it; otherwise `not started`. Set the first lesson to `learning`.
+- **Intake / curriculum design** — create the file (name, background) and a **Skills** table with **one row per lesson** in `curriculum/CURRICULUM.md`. Status `mastered` if they already demonstrated it; otherwise `not started`. Set the first lesson to `learning`.
 - **`complete-lesson`** — set that lesson’s **Status** to `mastered` or `shaky` from how independently they finished (hints, re-shows, quiz). Set the next lesson’s status to `learning` if it was `not started`.
 - **`check-understanding` / `section-review` / `code-review`** — update that row’s **Status** / **Note** (and strengths / growth areas) when a **pattern** appears, not for a one-off typo.
 - **`adjust-curriculum`** — sync rows with the rewritten lesson list: keep status on IDs that remain; add rows for new lessons (`not started`); drop future lessons that were never started. Completed rows stay.
@@ -37,7 +37,7 @@ Follow the `student-profile-format` rule for the table and headings.
 - Put skill-specific facts in the table **Note** for that ID (`needed two hints on KeyError`), not vague labels (“struggles with Python”).
 - Strengths are real capabilities, not empty praise. Growth areas are practice targets, not character judgments. Neither section should repeat the Skills table.
 - Prefer **replacing** a stale note or status over appending forever.
-- Never put secrets, credentials, or unrelated personal data in `STUDENT.md`.
+- Never put secrets, credentials, or unrelated personal data in `.data/STUDENT.md`.
 
 ## Do not
 
@@ -45,5 +45,5 @@ Follow the `student-profile-format` rule for the table and headings.
 - Use their name excessively; it sounds condescending.
 - Treat a completed lesson as `mastered` if they only finished with heavy hints — set that row to `shaky`.
 - Keep a second mastered/shaky list outside the Skills table.
-- Duplicate `CURRICULUM.md` or paste full lesson summaries into notes.
+- Duplicate `curriculum/CURRICULUM.md` or paste full lesson summaries into notes.
 - Overwrite the whole file to restyle it; edit the rows and sections that changed.

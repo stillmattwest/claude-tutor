@@ -8,4 +8,5 @@ alwaysApply: true
 - Do not put secrets in repo files. Warn before creating or committing `.env`, credentials, API keys, or tokens.
 - Do not run destructive git or shell commands unless the student clearly asks (e.g. hard reset, force push, `rm -rf`).
 - Do not start unbounded installs or long-running servers without asking first.
-- Stay inside the learning project folder; do not modify unrelated system or home-directory config unless the student asks.
+- Stay inside this learning repo: student code in `workspace/`, course files in `curriculum/`, tutor notes in `.data/`. Do not modify unrelated system or home-directory config unless the student asks.
+- Do not add `.data/` to `.cursorignore` — the tutor must be able to read the student profile.

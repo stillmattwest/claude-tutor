@@ -1,18 +1,18 @@
 ---
 name: complete-lesson
-description: Writes the lesson summary, updates STUDENT.md mastery, and advances the current-lesson pointer when a lesson end goal is met. Use when the student has met the current lesson end goal or the tutor confirms the lesson is complete.
+description: Writes the lesson summary, updates .data/STUDENT.md mastery, and advances the current-lesson pointer when a lesson end goal is met. Use when the student has met the current lesson end goal or the tutor confirms the lesson is complete.
 ---
 
 # Complete Lesson
 
 ## Instructions
 
-1. Confirm the current lesson’s **end goal** in `CURRICULUM.md` is met. If not, stop and say what is still missing.
+1. Confirm the current lesson’s **end goal** in `curriculum/CURRICULUM.md` is met. If not, stop and say what is still missing.
 2. Create the summary file (create the section folder if needed):
 
-   `lesson_summaries/NN-section-slug/N.N-lesson-slug.md`
+   `curriculum/lesson_summaries/NN-section-slug/N.N-lesson-slug.md`
 
-   Example: `lesson_summaries/01-your-computer-as-a-workshop/1.1-files-folders-and-the-terminal.md`
+   Example: `curriculum/lesson_summaries/01-your-computer-as-a-workshop/1.1-files-folders-and-the-terminal.md`
 
 3. Write the summary with these headings:
 
@@ -21,7 +21,7 @@ description: Writes the lesson summary, updates STUDENT.md mastery, and advances
    - **What you built** — files or artifacts they created
    - **Open questions** — optional; omit the section if none
 
-4. Update the `# Current lesson:` line at the top of `CURRICULUM.md` to the next lesson. If this was the last lesson in a section and the section end goal is met, follow the `section-review` skill next (or point the student there). If the course is finished, set the current-lesson line to a clear “complete” note.
+4. Update the `# Current lesson:` line at the top of `curriculum/CURRICULUM.md` to the next lesson. If this was the last lesson in a section and the section end goal is met, follow the `section-review` skill next (or point the student there). If the course is finished, set the current-lesson line to a clear “complete” note.
 5. Follow the `student-profile` skill: set this lesson’s Skills-table row to `mastered` or `shaky` from how independently they finished, set the next lesson to `learning` if needed, and refresh strengths / growth areas if a pattern showed up.
 6. Do this bookkeeping without waiting to be asked. Then tell the student the lesson is done and what the next lesson is.
 

@@ -1,13 +1,13 @@
 ---
 name: teach-lesson
-description: Delivers the current curriculum lesson with explain-show-practice flow. Use when teaching the current lesson, starting a lesson, or continuing lesson work from CURRICULUM.md.
+description: Delivers the current curriculum lesson with explain-show-practice flow. Use when teaching the current lesson, starting a lesson, or continuing lesson work from curriculum/CURRICULUM.md.
 ---
 
 # Teach Lesson
 
 ## Instructions
 
-1. Read `STUDENT.md` if it exists (follow `student-profile`). Read the **current lesson** in `CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
+1. Read `.data/STUDENT.md` if it exists (follow `student-profile`). Read the **current lesson** in `curriculum/CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
 2. Follow this flow for the lesson:
 
    **Orient** — What is new in this lesson vs review from earlier lessons.
@@ -16,13 +16,13 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
    **Check understanding** — Ask the student to explain back in their own words before the main exercise (and between parts when the lesson is long).
 
-   **Practice** — Give an exercise **they** type. It should reach the lesson end goal using only what this lesson (and prior lessons) already taught or showed.
+   **Practice** — Give an exercise **they** type in `workspace/`. It should reach the lesson end goal using only what this lesson (and prior lessons) already taught or showed.
 
    **Review** — Use the `code-review` skill on their work. Let them fix the one improvement you name.
 
    **Close** — When the end goal is met, follow `complete-lesson`. If blocked during practice, use `stuck`.
 
-3. Match depth and vocabulary to `STUDENT.md` (and prior lesson summaries). Stay encouraging and welcoming.
+3. Match depth and vocabulary to `.data/STUDENT.md` (and prior lesson summaries). Stay encouraging and welcoming.
 
 ## Split complex lessons into parts (required)
 
@@ -54,7 +54,7 @@ Before any exercise that uses something **new in this lesson**, show a minimal e
 
 If the syntax or pattern was **already taught and practiced** in an earlier lesson or exists in **their project**, you do not need to show a fresh chat example every time. Instead:
 
-- Point them to the **earlier lesson summary** (`lesson_summaries/...`) or the **file and spot** where they wrote it before.
+- Point them to the **earlier lesson summary** (`curriculum/lesson_summaries/...`) or the **file and spot** in `workspace/` where they wrote it before.
 - Ask them to **reuse or adapt** that code (e.g. “Use the constructor you wrote in lesson 1.4 as a template—add a new field for this exercise.”).
 - They can ask for a more specific hint or a re-show if they are stuck—that is what `stuck` is for.
 
@@ -70,7 +70,7 @@ Rules of thumb:
 
 - Tie directly to the lesson **end goal**.
 - One main exercise at a time; add a smaller warm-up first if the jump is large.
-- Do not create or edit project files for them unless they explicitly ask.
+- Do not create or edit project files for them unless they explicitly ask. When they ask, put files in `workspace/`.
 - Do not skip teach-back to get to coding faster.
 
 ## Do not
@@ -84,6 +84,6 @@ Rules of thumb:
 ## Examples
 
 - Lesson 1.5 introduces Python classes → **Lesson 1.5 Part 1**: tiny class + `__init__` + what `self` is; check. **Part 2**: one method; check. Then exercise: add a field and method.
-- Later lesson needs another class → Point to their earlier class/`__init__` in their project or lesson summary; ask them to adapt it. Re-show only if they ask or are stuck.
+- Later lesson needs another class → Point to their earlier class/`__init__` in `workspace/` or a lesson summary; ask them to adapt it. Re-show only if they ask or are stuck.
 - **Lesson 2.1 Part 1** introduces FastAPI POST → show `@app.post(...)` and body model; check. Then exercise: second endpoint same pattern.
 - Student asks to start lesson 2.3 → Orient with the end goal, show only what 2.3 adds new, then practice.

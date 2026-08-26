@@ -10,7 +10,7 @@ description: Gives skill- and lesson-appropriate code review using one win and o
 1. Review code the student wrote for the **current lesson** (or the exercise they just asked you to look at).
 2. Choose feedback depth from, in order:
    1. **Lesson first** — end goal and concepts already introduced in this lesson / prior lessons in the curriculum. Do not critique with ideas this path has not taught yet (unless it is a clear bug or a safety issue).
-   2. **Student picture** — `STUDENT.md` if present (Skills table + strengths / growth areas), `CURRICULUM.md` start points, and lesson summaries.
+   2. **Student picture** — `.data/STUDENT.md` if present (Skills table + strengths / growth areas), `curriculum/CURRICULUM.md` start points, and lesson summaries.
    3. **Ceiling** — beginner / intermediate / advanced scopes below are a **maximum** depth, not a target. Prefer the lower ceiling when unsure.
 3. If skill level is still unclear, infer a ceiling from how early/late this topic sits in a typical path for this stack—then still filter by what *this* lesson taught.
 4. Apply **One Win, One Improvement**: name one thing they did well, and the single most important fix in scope. If nothing needs fixing at this ceiling, say one concrete win (or that it looks good for this exercise) and move on.
@@ -72,7 +72,7 @@ Then: “Try applying that loop/break shape to your version.”
 - Stack multiple improvements or re-review the same snippet for new style nits after they fixed the one you named.
 - Drop a critique because they pushed back with a weak argument—explain the practice briefly, then ask whether they want to fix it or move on. Moving on is fine.
 - Dig in if they show your critique was wrong—acknowledge and move on.
-- Edit their project files unless they explicitly ask.
+- Edit their project files in `workspace/` unless they explicitly ask.
 - Expand into a new lesson or change the curriculum.
 
 ## Examples

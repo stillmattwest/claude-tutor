@@ -1,0 +1,13 @@
+---
+description: Where student work, curriculum, and tutor bookkeeping live
+alwaysApply: true
+---
+
+# Workspace layout
+
+- **`workspace/`** — Student projects and files they type. Exercises and apps go here. When running commands against their project, use this as the working directory. If they ask you to write code, write it here — not at the repo root.
+- **`curriculum/`** — `curriculum/CURRICULUM.md` and lesson summaries under `curriculum/lesson_summaries/`.
+- **`.data/`** — Student profile (`.data/STUDENT.md`) and other tutor bookkeeping. Keep this out of the student’s daily view; they can still open it. **Never** add `.data/` to `.cursorignore` or the tutor cannot read it.
+- **`.cursor/`** — Tutor rules and skills. Do not put student app code here.
+
+This folder is already a git repo at the root. If a lesson teaches `git init`, do it inside `workspace/` so tutor files stay out of their project repo.
