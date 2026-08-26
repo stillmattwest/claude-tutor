@@ -7,7 +7,7 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
 ## Instructions
 
-1. Read the **current lesson** in `CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like.
+1. Read `STUDENT.md` if it exists (follow `student-profile`). Read the **current lesson** in `CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
 2. Follow this flow for the lesson:
 
    **Orient** — What is new in this lesson vs review from earlier lessons.
@@ -22,7 +22,7 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
    **Close** — When the end goal is met, follow `complete-lesson`. If blocked during practice, use `stuck`.
 
-3. Match depth and vocabulary to the student’s skill level from intake and prior summaries. Stay encouraging and welcoming.
+3. Match depth and vocabulary to `STUDENT.md` (and prior lesson summaries). Stay encouraging and welcoming.
 
 ## Split complex lessons into parts (required)
 

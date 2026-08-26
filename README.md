@@ -11,9 +11,9 @@ Rules and skills that turn Cursor into a curriculum designer and coding mentor f
 /curriculum I want to learn web development with Python and FastAPI
 ```
 
-Cursor will ask about your background and skill level, then write a `CURRICULUM.md` divided into sections and lessons.
+Cursor will ask what to call you, your background, and skill level, then write a `CURRICULUM.md` divided into sections and lessons, plus a living `STUDENT.md` (name, strengths, growth areas, and a skills table keyed by lesson ID). That file is how the tutor remembers you in the next chat.
 
-After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself, and advance only when the lesson’s end goal is met.
+After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself, and advance only when the lesson’s end goal is met. It reads `STUDENT.md` so explanations match what you already handle well and where you still need practice.
 
 ### Useful skills
 
@@ -27,6 +27,7 @@ After that, chat normally. The tutor rule keeps Cursor on the current lesson: ex
 | `/check-understanding` | Quiz / teach-back on the current lesson |
 | `/complete-lesson` | Lesson end goal met (tutor usually runs this) |
 | `/section-review` | Section end goal met or you want a section checkpoint |
+| `/student-profile` | Create or refresh `STUDENT.md` (name, strengths, skills table) |
 
 ## What you get
 
@@ -35,7 +36,8 @@ After that, chat normally. The tutor rule keeps Cursor on the current lesson: ex
 - **Active practice** — You write the code. Cursor reviews it in chat, names problems, and lets you fix them.
 - **Hint ladder when stuck** — Smallest useful hint first; full solutions only if you ask.
 - **Lesson summaries** — After each lesson, a short summary under `lesson_summaries/` you can revisit later.
+- **Student profile** — `STUDENT.md` remembers your name, strengths, growth areas, and a skills table (one row per lesson: `not started` / `learning` / `shaky` / `mastered`).
 
 ## Status
 
-Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, and section review — with safety rails and a fixed lesson-summary format.
+Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, section review, and a living student profile — with safety rails and fixed formats for lesson summaries and `STUDENT.md`.

@@ -18,9 +18,12 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 ### Intake (stop and ask if unknown)
 
 - For mid-course changes that keep completed lessons (pace, skip known topics, capstone tweak), stop and use the `adjust-curriculum` skill instead of rewriting everything.
+- Ensure you know **what to call them** (name / goes-by). If you do not, stop and ask.
 - Ensure you know what the user wants to learn. If you do not, stop and ask.
 - Ensure you know if the user wants to build a particular type of learning project. If not, stop and ask. If they do not have one in mind, that is okay; if they do, build the curriculum around it.
 - Ensure you know the user's programming background. If you do not, stop and ask. Be specific. Labels like "beginner" and "intermediate" are too vague.
+
+After intake (and after writing `CURRICULUM.md`), follow the `student-profile` skill: create or update `STUDENT.md` with name, background, and a **Skills** table with one row per lesson. Mark skills they already demonstrated as `mastered`; leave the rest `not started` and set the first lesson to `learning`.
 
 ### When the goal is “get a job”
 

@@ -14,6 +14,7 @@ description: End-of-section checkpoint against the section end goal, then advanc
 5. When the section end goal is met:
    - Briefly celebrate and summarize what the section unlocked.
    - Set `# Current lesson:` to the first lesson of the next section (if `complete-lesson` did not already).
+   - Follow `student-profile`: update each Skills-table row in this section (`mastered` / `shaky`) and prune notes that no longer apply.
    - Tell the student the next section’s start point and first lesson title.
 6. Optional: one short critique of their capstone-so-far or section project — strengths and one improvement — only if they built something reviewable.
 

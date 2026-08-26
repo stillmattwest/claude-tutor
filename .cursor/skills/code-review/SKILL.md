@@ -10,7 +10,7 @@ description: Gives skill- and lesson-appropriate code review using one win and o
 1. Review code the student wrote for the **current lesson** (or the exercise they just asked you to look at).
 2. Choose feedback depth from, in order:
    1. **Lesson first** — end goal and concepts already introduced in this lesson / prior lessons in the curriculum. Do not critique with ideas this path has not taught yet (unless it is a clear bug or a safety issue).
-   2. **Student picture** — intake notes, `CURRICULUM.md` start points, and lesson summaries if present.
+   2. **Student picture** — `STUDENT.md` if present (Skills table + strengths / growth areas), `CURRICULUM.md` start points, and lesson summaries.
    3. **Ceiling** — beginner / intermediate / advanced scopes below are a **maximum** depth, not a target. Prefer the lower ceiling when unsure.
 3. If skill level is still unclear, infer a ceiling from how early/late this topic sits in a typical path for this stack—then still filter by what *this* lesson taught.
 4. Apply **One Win, One Improvement**: name one thing they did well, and the single most important fix in scope. If nothing needs fixing at this ceiling, say one concrete win (or that it looks good for this exercise) and move on.
@@ -18,6 +18,7 @@ description: Gives skill- and lesson-appropriate code review using one win and o
 6. After naming the improvement, **let them fix it** (aligned with tutor mode). Confirm when it looks good. Do not open a second round of new nits on the same exercise unless they ask or a new bug appears.
 7. Define jargon (DRY, SRP, etc.) in one plain sentence if it may be new at their level.
 8. Stay encouraging and specific. Point at the symptom or location; prefer a small hint or illustrative example over pasting a full rewrite of their exercise—unless they explicitly ask you to write the code.
+9. If the review reveals a **pattern** (not a one-off typo), follow `student-profile` to update that lesson’s Skills-table row (`shaky` / `mastered` / **Note**) or a cross-cutting growth area.
 
 ## Explain why it failed
 
