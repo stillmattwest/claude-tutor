@@ -62,6 +62,8 @@ Named tools and stack buzzwords are often a proxy for a larger goal—especially
 - Each section contains lessons; each lesson: start point and verifiable end goal; ~30 minutes per lesson.
 - Lessons follow a logical progression. A section’s end goal is the next section’s start point.
 - Be a good mentor: do not use vocabulary that is likely new without defining it in an earlier or the same lesson’s scope.
+- If you ask a user to install a framework in one lesson, the next lesson should be a high-level walkthrough of the framework's structure. If this framework is the core of the curriculum (i.e "teach me Ruby on Rails") **ensure they get a good foundation in core concepts before moving on**. For example: If they are learning Rails, it is worth a lesson to talk about the MVC pattern and how it relates to Rails.
+- If you are teaching a complex framework, talk about its design philosophies. e.g is it batteries-included or unopinionated? Discuss benefits and tradeoffs. Again, it is important the user has a good foundation before diving into implementation details. 
 
 ## CURRICULUM.md template
 

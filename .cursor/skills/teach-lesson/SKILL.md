@@ -69,13 +69,14 @@ Rules of thumb:
 ## Exercise design
 
 - Tie directly to the lesson **end goal**.
-- One main exercise at a time; add a smaller warm-up first if the jump is large.
+- One main exercise at a time; add a smaller warm-up first if the jump is large.s
 - Do not create or edit project files for them unless they explicitly ask. When they ask, put files in `workspace/`.
 - Do not skip teach-back to get to coding faster.
 
 ## Do not
 
 - Do not dump an entire complex lesson in one message—use parts and checks between them.
+- Use analogies as they can be confusing. Just explain the concept you are teaching in plain language.
 - Teach the next lesson or section before the current end goal is met.
 - Assign exercises that require unread docs or undiscovered syntax.
 - Dump a full solution when they are stuck—use `stuck` instead.
