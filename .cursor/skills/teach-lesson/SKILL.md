@@ -7,7 +7,7 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
 ## Instructions
 
-1. Read `.data/STUDENT.md` if it exists (follow `student-profile`). Read the **current lesson** in `curriculum/CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
+1. If `curriculum/MASTERTRACK.md` exists, read `.data/MASTERTRACK.md` and `.data/IN_MASTERTRACK_CURRICULUM` (missing = `off`). If the current item is a milestone, capstone, or pause, **stop** — follow the `mastertrack` skill (`projects.md` or wait). Do not teach from `CURRICULUM.md`. If there is no map, ignore this check. Read `.data/STUDENT.md` if it exists (follow `student-profile`). Read the **current lesson** in `curriculum/CURRICULUM.md` (title, start point, end goal). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
 2. Follow this flow for the lesson:
 
    **Orient** — What is new in this lesson vs review from earlier lessons.

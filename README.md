@@ -5,30 +5,40 @@ Rules and skills that turn Cursor into a curriculum designer and coding mentor f
 ## How to use
 
 1. Copy this repo into a folder dedicated to what you want to learn.
-2. Open a chat and run the curriculum skill (`/curriculum`), then describe your goal.
+2. Open a chat and run **`/curriculum`** for one course, or **`/mastertrack`** for a sequence of full courses plus build projects.
 
 ```
-/curriculum I want to learn web development with Python and FastAPI
+/curriculum I want to learn FastAPI
 ```
 
-Cursor will ask what to call you, your background, and skill level, then write `curriculum/CURRICULUM.md` divided into sections and lessons.
+```
+/mastertrack I want professional web development from scratch
+```
 
-After that, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself in `workspace/`, and advance only when the lesson’s end goal is met.
+For a single course, Cursor asks what to call you, your background, and skill level, then writes `curriculum/CURRICULUM.md` divided into sections and lessons.
+
+For a mastertrack, it writes a **map** (`curriculum/MASTERTRACK.md`) of topics — each with a few skills, start points, and end goals — plus milestone projects and a capstone. It does **not** write each topic’s full course until you get there. If you run `/curriculum` with a goal that is clearly several full topics, Cursor will offer a mastertrack vs one combined course and wait.
+
+After a live course exists, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself in `workspace/`, and advance only when the lesson’s end goal is met.
 
 ### Layout
 
 | Folder | What lives there |
 |--------|------------------|
 | `workspace/` | Your projects and the files you type |
-| `curriculum/` | The course (`CURRICULUM.md`) and lesson summaries |
+| `curriculum/` | The live course (`CURRICULUM.md`), lesson summaries, and (if you have one) the mastertrack map |
+| `curriculum/tracks/` | Archived courses from finished mastertrack steps |
+| `.data/` | Student profile, mastertrack progress, and the in-curriculum flag |
 | `.cursor/` | Tutor rules and skills |
 
 ### Useful skills
 
 | Skill | When to use |
 |-------|-------------|
-| `/curriculum` | Design or fully redesign the course |
-| `/adjust-curriculum` | Mid-course pace, skip, or capstone changes |
+| `/curriculum` | Design or fully redesign one course |
+| `/mastertrack` | Design a multi-topic track (courses + milestones + capstone) |
+| `/adjust-curriculum` | Mid-course pace, skip, or capstone changes (this course only) |
+| `/adjust-mastertrack` | Change remaining topics, order, or the track capstone |
 | `/teach-lesson` | Start or continue the current lesson (tutor usually runs this) |
 | `/stuck` | You’re blocked and want a hint, not the full answer |
 | `/code-review` | Feedback on exercise code (one win, one improvement) |
@@ -44,7 +54,8 @@ After that, chat normally. The tutor rule keeps Cursor on the current lesson: ex
 - **Active practice** — You write the code. Cursor reviews it in chat, names problems, and lets you fix them.
 - **Hint ladder when stuck** — Smallest useful hint first; full solutions only if you ask.
 - **Lesson summaries** — After each lesson, a short summary under `curriculum/lesson_summaries/` you can revisit later.
+- **Mastertrack (optional)** — Several full courses in sequence, a milestone build after every two courses, and a larger capstone. Finishing a course pauses with a recap of where you are on the track; the next course is written only when you start it.
 
 ## Status
 
-Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, and section review — with safety rails and a fixed lesson-summary format.
+Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, and section review — with safety rails and a fixed lesson-summary format. Mastertrack is available as a map-plus-projects path on top of that loop.

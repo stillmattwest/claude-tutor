@@ -1,6 +1,6 @@
 ---
 name: curriculum-design
-description: Designs or fully redesigns curriculum/CURRICULUM.md with sections, lessons, start points, and verifiable end goals. Use when that file is missing or the user wants a from-scratch rewrite. For mid-course pace, skip, or capstone tweaks, use adjust-curriculum instead.
+description: Designs or fully redesigns curriculum/CURRICULUM.md with sections, lessons, start points, and verifiable end goals. Use when that file is missing or the user wants a from-scratch rewrite. If the goal is clearly several full topics, offer a mastertrack vs one course. For mid-course pace, skip, or capstone tweaks, use adjust-curriculum instead. For topic-order changes on an existing mastertrack, use adjust-mastertrack.
 ---
 
 # Curriculum Design
@@ -15,8 +15,16 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 
 ## Instructions
 
+### Mastertrack (do not damage the single-curriculum path)
+
+- If `curriculum/MASTERTRACK.md` is **missing**, skip this subsection. Intake and design below are unchanged.
+- If a map exists **and** you are writing the live course for a **mapped curriculum item** (student asked to start that step, or the `mastertrack` skill handed off here): **skip intake**. Read `.data/STUDENT.md` and `.data/MASTERTRACK.md`. Use that item’s start/end and its 3–4 track skills as the spine: **one section per track skill**, lessons ~30 minutes under each. Then write `curriculum/CURRICULUM.md` as usual and follow `student-profile` (replace the lesson Skills table only; keep identity / strengths / growth). The `mastertrack` skill sets `.data/IN_MASTERTRACK_CURRICULUM` to `on`.
+- If a map exists and they want to change **topics or order**, stop and use `adjust-mastertrack`. For pace/lessons inside the *live* course only, use `adjust-curriculum`.
+- If **no** map, and after inferring scope the honest path is **several full topics** (each would be its own course), **offer** a mastertrack vs one combined course. Wait. If they want a mastertrack, stop and use the `mastertrack` skill — do not write `CURRICULUM.md` in this turn. If they want one course, continue here.
+
 ### Intake (stop and ask if unknown)
 
+- Skip this intake when the mastertrack subsection above says to (map exists and this is a mapped step).
 - For mid-course changes that keep completed lessons (pace, skip known topics, capstone tweak), stop and use the `adjust-curriculum` skill instead of rewriting everything.
 - Ensure you know **what to call them** (name / goes-by). If you do not, stop and ask.
 - Ensure you know what the user wants to learn. If you do not, stop and ask.

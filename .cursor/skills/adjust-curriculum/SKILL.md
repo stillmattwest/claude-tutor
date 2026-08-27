@@ -7,7 +7,7 @@ description: Mid-course curriculum replan that keeps completed work and rewrites
 
 ## Instructions
 
-1. Read `.data/STUDENT.md` if it exists, then `curriculum/CURRICULUM.md`. Note the current lesson and what is already completed (summaries under `curriculum/lesson_summaries/` and lessons before the current line). Use the Skills table (`mastered` / `shaky`) when deciding what to compress or revisit.
+1. Read `.data/STUDENT.md` if it exists, then `curriculum/CURRICULUM.md`. Note the current lesson and what is already completed (summaries under `curriculum/lesson_summaries/` and lessons before the current line). Use the Skills table (`mastered` / `shaky`) when deciding what to compress or revisit. If `curriculum/MASTERTRACK.md` exists and they want to change **topics, order, or which courses are on the track**, stop and use `adjust-mastertrack` instead. This skill is only the **live** course’s remaining lessons.
 2. Ask only what you still need: what to change (too fast/slow, skip topics, new project goal) and any hard constraints.
 3. **Keep** completed lessons and their summaries as-is. Do not renumber or delete finished work unless the student explicitly asks.
 4. **Rewrite forward** from the current lesson (or from an agreed restart point): update remaining section/lesson titles, start points, and verifiable end goals so progression still chains (section end goal → next section start point).
@@ -19,6 +19,7 @@ description: Mid-course curriculum replan that keeps completed work and rewrites
 ## Do not
 
 - Replace the entire curriculum from scratch (use `curriculum` / curriculum-design for that).
+- Change mastertrack topics or order (use `adjust-mastertrack`).
 - Skip verifying end goals on rewritten lessons.
 - Erase lesson summaries for completed lessons.
 
