@@ -9,7 +9,7 @@ A mastertrack is a **map of skills** plus standalone projects. Each map skill ha
 
 If `curriculum/MASTERTRACK.md` is **missing**, this skill does not apply to the daily lesson loop. Single-curriculum behavior is unchanged.
 
-Follow the `mastertrack-format` rule for file shapes. Milestone and capstone teaching: [projects.md](projects.md). End of a track course: [complete-step.md](complete-step.md).
+Follow the `mastertrack-format` rule for file shapes. Before locking a map, follow [../curriculum/infer-scope.md](../curriculum/infer-scope.md) (same bar as `curriculum`: infer the real outcome, ship test, wait). Milestone and capstone teaching: [projects.md](projects.md). End of a track course: [complete-step.md](complete-step.md).
 
 ## Compatibility
 
@@ -26,9 +26,9 @@ Stop and ask if unknown (same bar as `curriculum`):
 - Whether they have a learning-project idea (optional).
 - Programming background — specific, not “beginner/intermediate.”
 
-If the goal is “get a job,” give the same honest disclaimer as the `curriculum` skill, then continue.
+If the goal is “get a job” or a professional role, follow [../curriculum/infer-scope.md](../curriculum/infer-scope.md) (disclaimer **and** the ship test). Do **not** write the map until they have answered the scope question.
 
-Stay encouraging. Prefer the current default good path for each topic (senior-correct tooling and foundations). Infer full scope and **ask** before locking topics; do not silently inflate or omit.
+Stay encouraging. Prefer the current default good path for each topic (senior-correct tooling and foundations). Do not silently inflate or omit topics.
 
 ### Build the sequence
 
@@ -42,6 +42,8 @@ Example cadence: `Python → Postgres → Milestone A → FastAPI → Tailwind �
 
 ### Write files
 
+Include **Out of scope** on the map (see `infer-scope.md` and `mastertrack-format`).
+
 1. `curriculum/MASTERTRACK.md` — the map. Current item = first curriculum step, status `not started`.
 2. `.data/MASTERTRACK.md` — all track skills `not started`. Current item = that first step, status `not started`.
 3. `.data/IN_MASTERTRACK_CURRICULUM` — `off`.
@@ -49,7 +51,7 @@ Example cadence: `Python → Postgres → Milestone A → FastAPI → Tailwind �
 
 Do **not** write `curriculum/CURRICULUM.md`.
 
-Tell them the track in plain language (steps, when they will build, what the capstone is). Name the first item. **Wait** — do not start step 1 until they say to.
+Follow the `introduce-mastertrack` skill (lesson-sized roadmap, excitement, mindset). **Wait** — do not start step 1 until they say to.
 
 ## Start the next item
 
@@ -66,7 +68,7 @@ Use when they agree to begin the current/next map item (after design, or after a
 - Write `.data/IN_MASTERTRACK_CURRICULUM` as `on`.
 - Set current item to this step, status `learning`, in both MASTERTRACK files.
 - Set this step’s first track skill to `learning` in `.data/MASTERTRACK.md`.
-- Name the first lesson and wait.
+- The `curriculum` skill follows `introduce-course`. Do not teach the first lesson in this turn.
 
 **Milestone or capstone**
 
@@ -90,9 +92,11 @@ Handled in [projects.md](projects.md). After a milestone: pause (same choice as 
 - Put milestone/capstone work inside `CURRICULUM.md`.
 - Change topics or order (use `adjust-mastertrack`).
 - Teach a map item that is not current.
+- Lock a professional/role track that cannot ship a product without running the ship test in `infer-scope.md` and waiting for their answer.
 
 ## Examples
 
-- `/mastertrack I want professional web development from scratch` → intake, write map + progress, flag `off`, wait to start C1.
-- Student: “Let’s start PostgreSQL” after a pause → no intake, write that step’s `CURRICULUM.md`, flag `on`.
+- `/mastertrack I want professional web development from scratch` → intake, write map + progress, flag `off`, `introduce-mastertrack`, wait to start C1.
+- No programming background, “professional AI engineer” → explain train-a-model vs ship-a-product; propose a path that includes shipping; **wait**. Do not lock Python + data + training only unless they explicitly accept that they would not yet be able to ship a product.
+- Student: “Let’s start PostgreSQL” after a pause → no intake, write that step’s `CURRICULUM.md`, flag `on`, `introduce-course`, wait for 1.1.
 - Student finishes the last FastAPI lesson with flag `on` → `complete-lesson` then [complete-step.md](complete-step.md), not “course over.”

@@ -1,61 +1,50 @@
 # Cursor Tutor
 
-Rules and skills that turn Cursor into a curriculum designer and coding mentor for whatever you want to learn.
+This folder turns Cursor into a coding tutor. You say what you want to learn. It builds a course around you, then walks you through it one lesson at a time. You write the code. It explains, checks that you understand, and only moves on when you can actually do the thing that lesson was for.
 
-## How to use
+You do not need to know how to program already. You do not need to design the course yourself.
 
-1. Copy this repo into a folder dedicated to what you want to learn.
-2. Open a chat and run **`/curriculum`** for one course, or **`/mastertrack`** for a sequence of full courses plus build projects.
+## Get started
+
+1. Open this folder in Cursor (a copy of this project, in a place you will keep your learning work).
+2. Open the chat.
+3. Type one of these, then say what you want in your own words:
 
 ```
-/curriculum I want to learn FastAPI
+/curriculum I want to learn Python
 ```
 
 ```
-/mastertrack I want professional web development from scratch
+/mastertrack I have no programming background and I want to be a professional web developer
 ```
 
-For a single course, Cursor asks what to call you, your background, and skill level, then writes `curriculum/CURRICULUM.md` divided into sections and lessons.
+Use **`/curriculum`** when you want one course (a few weeks of focused lessons).
 
-For a mastertrack, it writes a **map** (`curriculum/MASTERTRACK.md`) of topics — each with a few skills, start points, and end goals — plus milestone projects and a capstone. It does **not** write each topic’s full course until you get there. If you run `/curriculum` with a goal that is clearly several full topics, Cursor will offer a mastertrack vs one combined course and wait.
+Use **`/mastertrack`** when the goal is bigger — several full courses, short projects you build from scratch, and a larger capstone at the end. If you start with `/curriculum` and the goal is clearly that big, the tutor will offer a mastertrack and wait for you to choose.
 
-After a live course exists, chat normally. The tutor rule keeps Cursor on the current lesson: explain, show examples for new syntax, check understanding, give exercises you type yourself in `workspace/`, and advance only when the lesson’s end goal is met.
+It will ask what to call you, what you already know, and what you are aiming for. Then it writes the plan. Read the introduction, ask questions, and say when you are ready for the first lesson.
 
-### Layout
+After that, just chat. You do not need to run a command every time. Type exercises in the `workspace/` folder. When you are stuck, say so — or use `/stuck` if you want a hint instead of the answer.
 
-| Folder | What lives there |
-|--------|------------------|
-| `workspace/` | Your projects and the files you type |
-| `curriculum/` | The live course (`CURRICULUM.md`), lesson summaries, and (if you have one) the mastertrack map |
-| `curriculum/tracks/` | Archived courses from finished mastertrack steps |
-| `.data/` | Student profile, mastertrack progress, and the in-curriculum flag |
-| `.cursor/` | Tutor rules and skills |
+## Commands you might use
 
-### Useful skills
+| Command | What it is for |
+|---------|----------------|
+| `/curriculum` | Start (or fully redo) one course |
+| `/mastertrack` | Start a longer path: several courses, build projects, and a capstone |
+| `/adjust-curriculum` | This course is too fast, too slow, or you want to skip something you already know |
+| `/adjust-mastertrack` | Change later courses or the big project on a mastertrack |
+| `/stuck` | You are blocked and want a small hint, not the finished code |
+| `/code-review` | Feedback on what you wrote (what is working, and one thing to improve) |
+| `/check-understanding` | A short quiz on the current lesson |
+| `/section-review` | Check that you can do what this part of the course was for |
+| `/student-profile` | Update your name or how you like to learn |
 
-| Skill | When to use |
-|-------|-------------|
-| `/curriculum` | Design or fully redesign one course |
-| `/mastertrack` | Design a multi-topic track (courses + milestones + capstone) |
-| `/adjust-curriculum` | Mid-course pace, skip, or capstone changes (this course only) |
-| `/adjust-mastertrack` | Change remaining topics, order, or the track capstone |
-| `/teach-lesson` | Start or continue the current lesson (tutor usually runs this) |
-| `/stuck` | You’re blocked and want a hint, not the full answer |
-| `/code-review` | Feedback on exercise code (one win, one improvement) |
-| `/check-understanding` | Quiz / teach-back on the current lesson |
-| `/complete-lesson` | Lesson end goal met (tutor usually runs this) |
-| `/section-review` | Section end goal met or you want a section checkpoint |
-| `/student-profile` | Update your personal information |
+## Where your files are
 
-## What you get
+| Folder | What it is |
+|--------|------------|
+| `workspace/` | Your projects — this is where you type |
+| `curriculum/` | Your course plan, and short summaries after each lesson. If you have a mastertrack, the map of the whole path is here too |
 
-- **Progression with checkpoints** — Each section and lesson has a start point and a verifiable end goal. A section’s end goal is the next section’s start point.
-- **No black boxes** — When a framework or tool shows up, Cursor explains how it works in plain language before treating it as magic.
-- **Active practice** — You write the code. Cursor reviews it in chat, names problems, and lets you fix them.
-- **Hint ladder when stuck** — Smallest useful hint first; full solutions only if you ask.
-- **Lesson summaries** — After each lesson, a short summary under `curriculum/lesson_summaries/` you can revisit later.
-- **Mastertrack (optional)** — Several full courses in sequence, a milestone build after every two courses, and a larger capstone. Finishing a course pauses with a recap of where you are on the track; the next course is written only when you start it.
-
-## Status
-
-Core loop is in place: tutor mode plus skills for curriculum design, mid-course adjustment, stuck help, quizzes, lesson completion, and section review — with safety rails and a fixed lesson-summary format. Mastertrack is available as a map-plus-projects path on top of that loop.
+That is enough to begin. Open the chat and say what you want to learn.

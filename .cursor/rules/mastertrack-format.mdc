@@ -22,6 +22,10 @@ The flag `.data/IN_MASTERTRACK_CURRICULUM` is a one-line file: `on` or `off`. Mi
 
 # Current item: C1 Python foundations (not started)
 
+## Out of scope
+
+- What finishing this track still will not include (plain language). If they chose a narrower path, the first bullet is the honest gap (e.g. they will not yet be able to ship a product).
+
 ## Item C1: Python foundations
 **Type:** curriculum
 **Start point:** ...
@@ -90,6 +94,7 @@ The flag `.data/IN_MASTERTRACK_CURRICULUM` is a one-line file: `on` or `off`. Mi
 - **Capstone** is last. **Uses** lists the curriculum items it depends on (the whole track).
 - Milestone and capstone **Steps** are accomplishments, not code and not lesson plans. Do not put solution snippets in the map.
 - Do not write `curriculum/CURRICULUM.md` in this file.
+- Include **Out of scope** (plain language). Required. If they chose specialty-only, lead with what they will not yet be able to do.
 
 ## Progress (`.data/MASTERTRACK.md`)
 

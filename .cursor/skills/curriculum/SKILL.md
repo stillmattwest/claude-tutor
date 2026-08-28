@@ -18,7 +18,7 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 ### Mastertrack (do not damage the single-curriculum path)
 
 - If `curriculum/MASTERTRACK.md` is **missing**, skip this subsection. Intake and design below are unchanged.
-- If a map exists **and** you are writing the live course for a **mapped curriculum item** (student asked to start that step, or the `mastertrack` skill handed off here): **skip intake**. Read `.data/STUDENT.md` and `.data/MASTERTRACK.md`. Use that item’s start/end and its 3–4 track skills as the spine: **one section per track skill**, lessons ~30 minutes under each. Then write `curriculum/CURRICULUM.md` as usual and follow `student-profile` (replace the lesson Skills table only; keep identity / strengths / growth). The `mastertrack` skill sets `.data/IN_MASTERTRACK_CURRICULUM` to `on`.
+- If a map exists **and** you are writing the live course for a **mapped curriculum item** (student asked to start that step, or the `mastertrack` skill handed off here): **skip intake**. Read `.data/STUDENT.md` and `.data/MASTERTRACK.md`. Use that item’s start/end and its 3–4 track skills as the spine: **one section per track skill**, lessons ~30 minutes under each. Then write `curriculum/CURRICULUM.md` as usual and follow `student-profile` (replace the lesson Skills table only; keep identity / strengths / growth). The `mastertrack` skill sets `.data/IN_MASTERTRACK_CURRICULUM` to `on`. Then follow `introduce-course`. Do not teach the first lesson in this turn.
 - If a map exists and they want to change **topics or order**, stop and use `adjust-mastertrack`. For pace/lessons inside the *live* course only, use `adjust-curriculum`.
 - If **no** map, and after inferring scope the honest path is **several full topics** (each would be its own course), **offer** a mastertrack vs one combined course. Wait. If they want a mastertrack, stop and use the `mastertrack` skill — do not write `CURRICULUM.md` in this turn. If they want one course, continue here.
 
@@ -31,37 +31,9 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 - Ensure you know if the user wants to build a particular type of learning project. If not, stop and ask. If they do not have one in mind, that is okay; if they do, build the curriculum around it.
 - Ensure you know the user's programming background. If you do not, stop and ask. Be specific. Labels like "beginner" and "intermediate" are too vague.
 
-After intake (and after writing `curriculum/CURRICULUM.md`), follow the `student-profile` skill: create or update `.data/STUDENT.md` with name, background, and a **Skills** table with one row per lesson. Mark skills they already demonstrated as `mastered`; leave the rest `not started` and set the first lesson to `learning`. The student’s learning project lives in `workspace/`.
+**Before writing `CURRICULUM.md`:** follow [infer-scope.md](infer-scope.md). Do not lock the course until any required scope question is answered. Mapped live-course writes skip that file (the map item is the scope).
 
-### When the goal is “get a job”
-
-“I just want to get a job” (or similar) is a very common answer. Handle it carefully and kindly:
-
-1. **Be honest without crushing hope.** You cannot guarantee anyone a job. Landing an entry-level role as a self-taught coder is hard and competitive—say so plainly, without scare tactics or false promises.
-2. **Say what this path *can* do.** Set a solid foundation: real skills, senior-correct habits, and projects that demonstrate ability. Getting started on the right foot matters; this is a long journey, and completing a first curriculum is a meaningful first stretch—not the whole road.
-3. **Invite building later.** After they finish, they can ask to extend or redesign the curriculum (portfolios, interview prep, deeper stack, etc.). Do not pretend one course equals employment.
-4. **Then continue design.** Once that disclaimer (or similar) is clear, proceed with intake, scope inference, and `curriculum/CURRICULUM.md` as usual—still encouraging and welcoming.
-
-### Infer full scope (context-aware)
-
-Named tools and stack buzzwords are often a proxy for a larger goal—especially when the student is early in their journey (e.g. they saw “Python + FastAPI” on Reddit or a friend suggested it). Before writing `curriculum/CURRICULUM.md`:
-
-1. **Infer the likely real outcome** from their ask, background, and project idea. Example: a new programmer asking for FastAPI often wants to **ship a working website or web app**, not an API-only specialty. An experienced backend engineer asking for the same may want FastAPI depth only.
-2. **Map the gap** between what they named and what that outcome usually requires (adjacent skills, missing layers of the stack, ops/deploy basics, etc.).
-3. **With beginners, explain the basics before asking about scope.** Define any terms the question needs in one or two plain sentences first (e.g. what people see in the browser vs what the server does behind the scenes). Do not ask about “front-end” vs “API” until those ideas mean something—otherwise the question is confusing and the answer is useless.
-4. **Propose the fuller scope and ask**—do not silently inflate or silently omit. Phrase the question for their skill level:
-   - Early learners: outcome language only, after the brief definitions (“Do you want to learn enough to build the pages people click around in, or focus on the server part that sends and stores data?”).
-   - Experienced learners: sharper tradeoffs (“API-only FastAPI track, or full-stack with a minimal front end and how they talk to each other?”).
-5. **Wait for their answer** on material scope before locking the curriculum. If they decline adjacent topics, design a coherent narrower path and note what it will *not* cover so expectations stay honest.
-6. Still apply the senior-correct bar inside whatever scope they choose—fuller scope is about completeness of the goal, not an excuse for outdated shortcuts.
-
-### Protect them from what they don't know
-
-- Prefer the **current default good path** for the language, framework, and project type (packaging, project layout, testing, env/config, version control, and other norms seniors expect). Example: prefer `uv` for new Python projects over ad-hoc `pip` unless the domain truly requires otherwise.
-- Include **foundation topics the student did not ask for** when those topics are prerequisites for doing the desired skill well (e.g. a minimum of Git, tests, or project structure before a web API course). Keep those sections lean and justified by the end goal—do not pad.
-- If the student requests an approach a senior would consider outdated, fragile, or misleading for learning, **do not silently adopt it**. Briefly say what you recommend instead and why (one or two sentences), then design the curriculum on the sound path unless they insist after hearing the tradeoff.
-- Optimize for **transfer**: habits and mental models that still look right on the next project, not one-off tutorial magic that only works in this repo.
-- Sequence so each new tool or practice appears when it first matters, with a plain-language “what / why” baked into that lesson’s end goal—not as an unexplained black box later.
+After intake (and after writing `curriculum/CURRICULUM.md`), explain to the student that you are customizing their course and that is might take a few minutes. Then, follow the `student-profile` skill: create or update `.data/STUDENT.md` with name, background, and a **Skills** table with one row per lesson. Mark skills they already demonstrated as `mastered`; leave the rest `not started` and set the first lesson to `learning`. The student’s learning project lives in `workspace/`. Then follow the `introduce-course` skill before teaching (skip if the mapped-step bullet already did). Do not start lesson 1.1 in the same turn as design.
 
 ### Structure
 
@@ -79,6 +51,8 @@ Write `curriculum/CURRICULUM.md` in this shape. Keep a current-lesson line at th
 
 ```markdown
 # Current lesson: 1.1 First lesson title
+
+**Out of scope:** Short list of what this course will not cover (plain language). Omit only if the course is the entire goal with no honest gaps.
 
 ## Section 1: Section title
 **Start point:** What the student can already do.

@@ -16,7 +16,7 @@ Use only when `curriculum/MASTERTRACK.md` exists. If it does not, this skill doe
 5. Do **not** write or replace live `CURRICULUM.md` unless they are **between** items (flag `off`, status `paused` / `not started`) **or** they explicitly want the unused tail of the **current** course rewritten — then use `adjust-curriculum` for lesson-level changes, not this skill.
 6. If the flag is `on`, do not archive or swap the live course here. Change only **future** map items. Tell them the live course continues until they finish it or ask to abandon it.
 7. Sync `.data/MASTERTRACK.md`: keep status on track-skill ids that remain; add rows for new skills (`not started`); drop future skills that were never started. Completed rows stay.
-8. Keep `# Current item:` and progress **current item** consistent. Follow `mastertrack-format`.
+8. Keep `# Current item:` and progress **current item** consistent. Follow `mastertrack-format`. Update **Out of scope** if the remaining path’s honest gaps changed (if they drop shipping from a professional-role track, the first out-of-scope bullet must say they will not yet be able to ship a product).
 9. Briefly tell them what changed and what the next item is. Do not auto-start it.
 
 ## Do not
