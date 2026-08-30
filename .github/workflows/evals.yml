@@ -1,0 +1,104 @@
+name: evals
+
+on:
+  pull_request:
+    paths:
+      - ".claude/**"
+      - "CLAUDE.md"
+      - "README.md"
+      - "evals/**"
+      - ".github/workflows/evals.yml"
+  workflow_dispatch:
+  schedule:
+    - cron: "0 7 * * *" # nightly ~07:00 UTC
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python evals/run.py --lint
+
+  behavioural-fast:
+    # PRs only; the full suite runs on schedule/dispatch below.
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Gate on API key
+        id: guard
+        run: |
+          if [ -n "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::ANTHROPIC_API_KEY not set — skipping behavioural evals"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.enabled == 'true'
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          node-version: "20"
+      - name: Install Claude Code CLI
+        if: steps.guard.outputs.enabled == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Run fast suite
+        if: steps.guard.outputs.enabled == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python evals/run.py --fast
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.guard.outputs.enabled == 'true'
+        with:
+          name: eval-report
+          path: |
+            evals/report.json
+            evals/.work/
+
+  behavioural-full:
+    if: github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    needs: lint
+    steps:
+      - name: Gate on API key
+        id: guard
+        run: |
+          if [ -n "${{ secrets.ANTHROPIC_API_KEY }}" ]; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice::ANTHROPIC_API_KEY not set — skipping behavioural evals"
+          fi
+      - uses: actions/checkout@v4
+        if: steps.guard.outputs.enabled == 'true'
+      - uses: actions/setup-python@v5
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        if: steps.guard.outputs.enabled == 'true'
+        with:
+          node-version: "20"
+      - name: Install Claude Code CLI
+        if: steps.guard.outputs.enabled == 'true'
+        run: npm install -g @anthropic-ai/claude-code
+      - name: Run full suite
+        if: steps.guard.outputs.enabled == 'true'
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: python evals/run.py --behavioral
+      - uses: actions/upload-artifact@v4
+        if: always() && steps.guard.outputs.enabled == 'true'
+        with:
+          name: eval-report-full
+          path: |
+            evals/report.json
+            evals/.work/

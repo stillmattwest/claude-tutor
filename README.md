@@ -1,13 +1,13 @@
-# Cursor Tutor
+# Claude Tutor
 
-This folder turns Cursor into a coding tutor. You say what you want to learn. It builds a course around you, then walks you through it one lesson at a time. You write the code. It explains, checks that you understand, and only moves on when you can actually do the thing that lesson was for.
+This folder turns Claude Code into a coding tutor. You say what you want to learn. It builds a course around you, then walks you through it one lesson at a time. You write the code. It explains, checks that you understand, and only moves on when you can actually do the thing that lesson was for.
 
 You do not need to know how to program already. You do not need to design the course yourself.
 
 ## Get started
 
-1. Open this folder in Cursor (a copy of this project, in a place you will keep your learning work).
-2. Open the chat.
+1. Copy this project to a place you will keep your learning work.
+2. Open a terminal in that folder and run `claude`.
 3. Type one of these, then say what you want in your own words:
 
 ```
@@ -24,21 +24,24 @@ Use **`/mastertrack`** when the goal is bigger — several full courses, short p
 
 It will ask what to call you, what you already know, and what you are aiming for. Then it writes the plan. Read the introduction, ask questions, and say when you are ready for the first lesson.
 
-After that, just chat. You do not need to run a command every time. Type exercises in the `workspace/` folder. When you are stuck, say so — or use `/stuck` if you want a hint instead of the answer.
+## Talking to it
 
-## Commands you might use
+After the plan is written, you just chat — type your exercises in the `workspace/` folder and tell the tutor what is going on. It picks the right thing to do from what you say:
+
+- "I'm stuck" → a hint, not the answer
+- "Can you look at this?" (paste your code) → one thing that is working, one thing to improve
+- "Quiz me" → a few questions on the current lesson
+- "This is going too fast" / "I already know loops" → it reworks the plan
+- "Call me Sam" / "show me an example first, then let me try" → it remembers
+
+You do not need to memorise commands. These two are the only ones you need, and only to *start* something:
 
 | Command | What it is for |
 |---------|----------------|
 | `/curriculum` | Start (or fully redo) one course |
 | `/mastertrack` | Start a longer path: several courses, build projects, and a capstone |
-| `/adjust-curriculum` | This course is too fast, too slow, or you want to skip something you already know |
-| `/adjust-mastertrack` | Change later courses or the big project on a mastertrack |
-| `/stuck` | You are blocked and want a small hint, not the finished code |
-| `/code-review` | Feedback on what you wrote (what is working, and one thing to improve) |
-| `/check-understanding` | A short quiz on the current lesson |
-| `/section-review` | Check that you can do what this part of the course was for |
-| `/student-profile` | Update your name or how you like to learn |
+
+There are `/`-command versions of the rest (`/review`, `/adjust-curriculum`, and so on) if you would rather be explicit, but plain words work just as well.
 
 ## Where your files are
 
@@ -47,4 +50,4 @@ After that, just chat. You do not need to run a command every time. Type exercis
 | `workspace/` | Your projects — this is where you type |
 | `curriculum/` | Your course plan, and short summaries after each lesson. If you have a mastertrack, the map of the whole path is here too |
 
-That is enough to begin. Open the chat and say what you want to learn.
+That is enough to begin. Run `claude` and say what you want to learn.
