@@ -26,6 +26,8 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 
 - Skip this intake when the mastertrack subsection above says to (map exists and this is a mapped step).
 - For mid-course changes that keep completed lessons (pace, skip known topics, capstone tweak), stop and use the `adjust-curriculum` skill instead of rewriting everything.
+- If `curriculum/CURRICULUM.md` already exists and the student wants a fresh plan, follow [archive-live-course.md](archive-live-course.md) first — warn, confirm, then archive the old course before writing the new one.
+- If the student wants only a fast, high-level footing in one narrow topic (not full coverage), offer the `short-course` skill instead: at most five lessons at full depth. If they take it, stop here.
 - Ensure you know **what to call them** (name / goes-by). If you do not, stop and ask.
 - Ensure you know what the user wants to learn. If you do not, stop and ask.
 - Ensure you know if the user wants to build a particular type of learning project. If not, stop and ask. If they do not have one in mind, that is okay; if they do, build the curriculum around it.

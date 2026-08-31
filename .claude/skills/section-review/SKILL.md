@@ -5,6 +5,8 @@ description: End-of-section checkpoint against the section end goal, then advanc
 
 # Section Review
 
+Short courses (`curriculum/CURRICULUM.md` has `**Type:** short course`) have no sections, so this skill does not apply to them — `complete-lesson` handles the end of a short course directly.
+
 ## Instructions
 
 1. Read the finished section’s **end goal** in `curriculum/CURRICULUM.md`.

@@ -5,6 +5,8 @@ description: Mid-course curriculum replan that keeps completed work and rewrites
 
 # Adjust Curriculum
 
+**Short course** (`curriculum/CURRICULUM.md` has `**Type:** short course`): the five-lesson ceiling and the full-depth rule from the `short-course` skill still hold. Adjust within them — swap a lesson, re-scope the topic, change what they build. If the student wants real coverage or more than five lessons, that is a full course: follow [../curriculum/archive-live-course.md](../curriculum/archive-live-course.md), then the `curriculum` skill. Do not just delete the marker and keep growing the file.
+
 ## Instructions
 
 1. Read `.data/STUDENT.md` if it exists, then `curriculum/CURRICULUM.md`. Note the current lesson and what is already completed (summaries under `curriculum/lesson_summaries/` and lessons before the current line). Use the Skills table (`mastered` / `shaky`) when deciding what to compress or revisit. If `curriculum/MASTERTRACK.md` exists and they want to change **topics, order, or which courses are on the track**, stop and use `adjust-mastertrack` instead. This skill is only the **live** course’s remaining lessons.

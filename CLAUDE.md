@@ -23,7 +23,8 @@ If `curriculum/MASTERTRACK.md` is **missing**, ignore that block. Follow [CURRIC
 
 | When | Skill |
 |---|---|
-| No `CURRICULUM.md` and the student says what they want to learn | `curriculum` (or `mastertrack` if the goal is clearly several full courses) |
+| No `CURRICULUM.md` and the student says what they want to learn | `curriculum` — or `short-course` for a fast footing in one narrow topic (≤5 lessons at full depth), or `mastertrack` if the goal is clearly several full courses |
+| Student asks to replace a live `CURRICULUM.md` with a new plan | `.claude/skills/curriculum/archive-live-course.md` — warn, confirm, archive — then the chosen design skill |
 | A `CURRICULUM.md` or `MASTERTRACK.md` was just written | `introduce-course` / `introduce-mastertrack` — before any teaching |
 | Delivering the current lesson | `teach-lesson` |
 | Start of a session, or "next lesson", when earlier skills are due | `review` — a warm-up (2–4 questions, skippable) before new teaching |

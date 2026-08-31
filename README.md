@@ -15,10 +15,16 @@ You do not need to know how to program already. You do not need to design the co
 ```
 
 ```
+/short-course give me the essentials of Git
+```
+
+```
 /mastertrack I have no programming background and I want to be a professional web developer
 ```
 
 Use **`/curriculum`** when you want one course (a few weeks of focused lessons).
+
+Use **`/short-course`** when you just want a quick footing in one topic — five lessons or fewer, taught properly, not a rushed survey. At the end the tutor points you at what to do next: a full course, another short course, or going off to build.
 
 Use **`/mastertrack`** when the goal is bigger — several full courses, short projects you build from scratch, and a larger capstone at the end. If you start with `/curriculum` and the goal is clearly that big, the tutor will offer a mastertrack and wait for you to choose.
 
@@ -34,11 +40,12 @@ After the plan is written, you just chat — type your exercises in the `workspa
 - "This is going too fast" / "I already know loops" → it reworks the plan
 - "Call me Sam" / "show me an example first, then let me try" → it remembers
 
-You do not need to memorise commands. These two are the only ones you need, and only to *start* something:
+You do not need to memorise commands. These are the only ones you need, and only to *start* something:
 
 | Command | What it is for |
 |---------|----------------|
 | `/curriculum` | Start (or fully redo) one course |
+| `/short-course` | A quick footing in one topic — five lessons or fewer, then you are pointed at what is next |
 | `/mastertrack` | Start a longer path: several courses, build projects, and a capstone |
 
 There are `/`-command versions of the rest (`/review`, `/adjust-curriculum`, and so on) if you would rather be explicit, but plain words work just as well.

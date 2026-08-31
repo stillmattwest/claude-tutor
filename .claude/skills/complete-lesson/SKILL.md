@@ -7,6 +7,8 @@ description: Writes the lesson summary, updates .data/STUDENT.md mastery, and ad
 
 ## Instructions
 
+**Short course** (`curriculum/CURRICULUM.md` has `**Type:** short course`): it has no sections and lesson IDs are `1`–`5`. Do steps 1, 3, 5, 6 as written. For step 2 the summary path is flat — `curriculum/lesson_summaries/N-lesson-slug.md`, no section folder. For step 4, just move `# Current lesson:` to the next number. When the lesson finished is the **last** one, set `# Current lesson:` to a "short course complete" note and follow the **End of the short course** handoff in the `short-course` skill (celebrate, then offer the three next-step options and let them sit with it), then stop — do **not** run `section-review` or `complete-step.md`.
+
 1. Confirm the current lesson’s **end goal** in `curriculum/CURRICULUM.md` is met. If not, stop and say what is still missing.
 2. Create the summary file (create the section folder if needed):
 

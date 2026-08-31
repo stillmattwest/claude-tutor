@@ -19,6 +19,8 @@ Follow the `mastertrack-format` skill for file shapes. Before locking a map, fol
 
 ## Design (intake once)
 
+If a live standalone `curriculum/CURRICULUM.md` already exists (no map yet), follow [../curriculum/archive-live-course.md](../curriculum/archive-live-course.md) before writing the map — warn, confirm, archive the old course.
+
 Stop and ask if unknown (same bar as `curriculum`):
 
 - What to call them (name / goes-by).
