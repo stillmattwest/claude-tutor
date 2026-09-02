@@ -18,6 +18,9 @@ from harness import Scenario, Transcript
 def _handoff_check(w: Path, t: Transcript):
     yield file_matches(w / ".data" / "IN_MASTERTRACK_CURRICULUM", r"^\s*off", "flag flipped to off")
     yield glob_exists(w, "curriculum/tracks/*/CURRICULUM.md", "course archived under curriculum/tracks/")
+    yield glob_exists(
+        w, "curriculum/tracks/*/lessons/**/*.md", "saved lesson plans archived with the course"
+    )
     yield file_absent(w / "curriculum" / "CURRICULUM.md", "live CURRICULUM.md removed from repo root")
     yield file_matches(
         w / "curriculum" / "MASTERTRACK.md",

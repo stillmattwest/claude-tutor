@@ -40,6 +40,10 @@ After the plan is written, you just chat — type your exercises in the `workspa
 - "This is going too fast" / "I already know loops" → it reworks the plan
 - "Call me Sam" / "show me an example first, then let me try" → it remembers
 
+Stop whenever you want. Next time you open `claude`, the tutor picks the current
+lesson back up exactly where you left it — same examples, same exercise, same
+spot in the lesson — not a fresh version of it.
+
 You do not need to memorise commands. These are the only ones you need, and only to *start* something:
 
 | Command | What it is for |

@@ -21,10 +21,15 @@ plan over an existing one. It protects work the student may still want.
    - Make `curriculum/archive/YYYY-MM-DD/` using today's date. If that folder
      already exists, append `-2`, `-3`, … so nothing is overwritten.
    - Move `curriculum/CURRICULUM.md` and the entire
-     `curriculum/lesson_summaries/` directory into it.
+     `curriculum/lesson_summaries/` directory into it. Also move
+     `.data/.lessons/` (the saved lesson plans) into it if that folder exists —
+     every plan is against the course being replaced.
    - Recreate an empty `curriculum/lesson_summaries/` for the new plan.
-   - Do **not** touch `.data/` here. The design skill rewrites the Skills table
-     itself via `student-profile` (keeping name, strengths, and growth areas).
+     `.data/.lessons/` does not need recreating — `teach-lesson` makes it on the
+     first lesson.
+   - Otherwise do **not** touch `.data/` here. The design skill rewrites the
+     Skills table itself via `student-profile` (keeping name, strengths, and
+     growth areas).
 4. Tell the student where the old course was archived (they can still open it),
    then continue with the new design.
 

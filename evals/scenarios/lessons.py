@@ -6,6 +6,8 @@ import re
 from pathlib import Path
 
 from assertions import (
+    file_exists,
+    file_lacks,
     file_matches,
     file_unchanged,
     glob_exists,
@@ -15,6 +17,8 @@ from assertions import (
 )
 from common import Result
 from harness import FIXTURES_DIR, Scenario, Transcript
+
+PLAN_2_1 = ".data/.lessons/02-a-first-flask-app/2.1-your-first-flask-route.md"
 
 
 def _data_rows(path: Path) -> int:
@@ -44,6 +48,11 @@ def _complete_check(w: Path, t: Transcript):
         yield Result("summary has the standard headings", headings >= 3, f"{headings}/3 found")
 
     yield file_matches(cur, r"^# Current lesson:\s*2\.2", "current-lesson pointer advanced to 2.2")
+    yield file_matches(
+        w / PLAN_2_1,
+        r"\*\*Status:\*\*\s*complete",
+        "2.1 saved lesson plan marked complete",
+    )
     yield file_matches(
         student,
         r"\|\s*2\.1\s*\|[^|\n]*\|\s*(mastered|shaky)\s*\|",
@@ -110,7 +119,62 @@ def _stuck_check(w: Path, t: Transcript):
     )
 
 
+def _resume_check(w: Path, t: Transcript):
+    plan = w / PLAN_2_1
+
+    yield file_matches(
+        w / "curriculum" / "CURRICULUM.md", r"^# Current lesson:\s*2\.1", "still on lesson 2.1"
+    )
+    yield file_exists(plan, "saved lesson plan still present")
+    yield file_matches(plan, r"\*\*Status:\*\*\s*in progress", "plan still in progress")
+    # authored content is frozen; only the Progress block / Status may move.
+    yield file_matches(
+        plan,
+        r"\*\*Built from end goal:\*\*\s*Creates `app\.py`",
+        "plan not re-authored (Built-from line intact)",
+    )
+    yield file_matches(
+        plan, r"Sam's Flask corner", "saved Part 2 example still in the plan verbatim"
+    )
+    yield file_lacks(
+        plan, r"\*\*Resume at:\*\*\s*Part 1\b", "resume pointer did not reset to Part 1"
+    )
+
+    body = t.all_text
+    yield text_has(body, r"part 2", "names Part 2 on resume")
+    yield text_has(
+        body, r"flask run|<h1>|render|browser", "resumes into the Part 2 material (HTML / flask run)"
+    )
+    yield text_lacks(
+        body,
+        r"(?i)let'?s start (lesson )?2\.1 from the (beginning|top)|start(ing)? over",
+        "does not restart the lesson from scratch",
+    )
+    rubric = (
+        "- The student left lesson 2.1 mid-way (Flask app object and a basic route already covered) "
+        "and has come back.\n"
+        "- The tutor RESUMES: it gives a brief recap of what was already done and picks up at the "
+        "next part (returning real HTML, running `flask run`, viewing it in a browser).\n"
+        "- It does NOT re-teach the Flask app object / basic route from scratch as if this were the "
+        "first time, and does not invent a different example or a different exercise than one about "
+        "a `/` route returning an `<h1>` and a `<p>`."
+    )
+    yield judge(rubric, body, threshold=4, label="resumes the lesson instead of regenerating it")
+
+
 SCENARIOS = [
+    Scenario(
+        name="resume_midlesson",
+        fixture="mid-course",
+        turns=[
+            "I'm back after a couple of weeks. Let's keep going with lesson 2.1 where I left off.",
+            "You can skip the warm-up, just pick the lesson back up.",
+        ],
+        check=_resume_check,
+        runs=3,
+        need=2,
+        fast=True,
+    ),
     Scenario(
         name="complete_lesson_bookkeeping",
         fixture="mid-course",

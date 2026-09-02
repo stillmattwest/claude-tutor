@@ -16,6 +16,7 @@ Run this **after** the usual `complete-lesson` summary and `.data/STUDENT.md` le
 2. **Archive.** Move the live course into `curriculum/tracks/<item-id>-<slug>/` (example: `curriculum/tracks/c1-python-foundations/`):
    - `curriculum/CURRICULUM.md`
    - `curriculum/lesson_summaries/` (the whole folder)
+   - `.data/.lessons/` (the whole folder) → `curriculum/tracks/<item-id>-<slug>/lessons/`. If it is empty or missing, skip it.
 3. Write `.data/IN_MASTERTRACK_CURRICULUM` as `off`.
 4. In both MASTERTRACK files, set **current item** to **paused** and name the **next** map item (milestone, next curriculum step, or capstone). If none, the track is complete — say so after the celebration and stop.
 

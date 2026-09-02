@@ -8,8 +8,11 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 ## Instructions
 
 1. If `curriculum/MASTERTRACK.md` exists, read `.data/MASTERTRACK.md` and `.data/IN_MASTERTRACK_CURRICULUM` (missing = `off`). If the current item is a milestone, capstone, or pause, **stop** — follow the `mastertrack` skill (`projects.md` or wait). Do not teach from `CURRICULUM.md`. If there is no map, ignore this check. Read `.data/STUDENT.md` if it exists (follow `student-profile`). Read `.data/SESSIONS.md` if it exists and pick up any **Resume** note from the last row. Read the **current lesson** in `curriculum/CURRICULUM.md` (title, start point, end goal). If the file has `**Type:** short course`, it has no sections and lesson IDs are `1`–`5`; there is no section-review, and `complete-lesson` handles the end of the course. Everything else here is unchanged — short-course lessons run the same flow and the same "split into parts" rule (a slightly longer lesson gets *more* parts, not a single dump). State the end goal in one sentence so the student knows what “done” looks like. Use their name. Skip or compress explanation for Skills-table rows with status `mastered`; spend more care on `shaky` rows and **Growth areas** when this lesson touches them.
-2. **Warm-up.** Run the `review` skill first if earlier skills are due (Skills-table `Review` buckets, or a gap since the last `.data/SESSIONS.md` row). Keep it to 2–4 questions and let the student skip it — unless a due skill is a prerequisite for this lesson and comes back shaky, then shore it up before teaching. Start or update today's row in `.data/SESSIONS.md` (per `session-log-format`).
-3. Follow this flow for the lesson:
+2. **Load or author the saved lesson plan** (a file step — nothing is shown to the student yet). Compute the plan path for the current lesson: `.data/.lessons/<NN-section-slug>/<N.N-lesson-slug>.md` (same slugs as the lesson summary; for a **short course** the path is flat — `.data/.lessons/<N-lesson-slug>.md`). Follow the `lesson-plan-format` skill for the file shape.
+   - **Plan exists.** Compare its `Built from end goal:` line to the current lesson's end goal in `curriculum/CURRICULUM.md`. If they differ, the plan is **stale** — say the lesson was updated since they last saw it, re-author the file (new `Generated:` date, `Progress` reset to `Part 1`), and deliver it fresh below. Otherwise **do not regenerate it**: load it and read `## Progress` → `Resume at:` — that is where step 4 picks up. Deliver from the plan's **saved** Orient, Show examples, and Exercise; do not invent new ones. If `Status:` is already `complete`, reuse the plan as a re-teach without rewriting it.
+   - **No plan.** Author the full plan now — Orient, parts with their Show examples and Checks, Exercise, Code-review focus — following `lesson-plan-format` and the two rule sections below. Write the file with `Status: in progress`, every `## Progress` item unchecked, `Resume at: Part 1`.
+3. **Warm-up.** Run the `review` skill first if earlier skills are due (Skills-table `Review` buckets, or a gap since the last `.data/SESSIONS.md` row). Keep it to 2–4 questions and let the student skip it — unless a due skill is a prerequisite for this lesson and comes back shaky, then shore it up before teaching. Start or update today's row in `.data/SESSIONS.md` (per `session-log-format`).
+4. Deliver the lesson from the plan, following the flow below. **Start at the plan's `Resume at:` point**, not at Orient — on a resume, give a one-line recap of the finished parts, then continue. As each part's Check passes, tick it in the plan's `## Progress` and move `Resume at:` to the next part; do the same after the exercise and after code review (bookkeeping — do it without being asked).
 
    **Orient** — What is new in this lesson vs review from earlier lessons.
 
@@ -23,9 +26,12 @@ description: Delivers the current curriculum lesson with explain-show-practice f
 
    **Close** — When the end goal is met, follow `complete-lesson`. If blocked during practice, use `stuck`.
 
-4. Match depth and vocabulary to `.data/STUDENT.md` (and prior lesson summaries). Stay encouraging and welcoming.
+5. Match depth and vocabulary to `.data/STUDENT.md` (and prior lesson summaries). Stay encouraging and welcoming.
 
 ## Split complex lessons into parts (required)
+
+This is what the saved lesson plan's `## Part N` sections capture — author them
+this way, then deliver from them.
 
 If a lesson has several new ideas or a long example, **split it into manageable parts**. Do not write a wall of text or hundreds of lines of explanation/code in one message.
 
@@ -70,7 +76,7 @@ Rules of thumb:
 ## Exercise design
 
 - Tie directly to the lesson **end goal**.
-- One main exercise at a time; add a smaller warm-up first if the jump is large.s
+- One main exercise at a time; add a smaller warm-up first if the jump is large.
 - Do not create or edit project files for them unless they explicitly ask. When they ask, put files in `workspace/`.
 - Do not skip teach-back to get to coding faster.
 
@@ -82,6 +88,7 @@ Rules of thumb:
 - Assign exercises that require unread docs or undiscovered syntax.
 - Dump a full solution when they are stuck—use `stuck` instead.
 - Treat frameworks or engine features as black boxes: explain what the tool is and why it is shaped that way when first shown.
+- Re-author a saved lesson plan that is still `in progress`, or swap its examples / exercise for new ones on resume. Only its `## Progress` block and `Status` change until the lesson is done. Route lesson content changes through `adjust-curriculum`.
 
 ## Examples
 

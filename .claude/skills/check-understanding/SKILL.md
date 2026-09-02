@@ -10,7 +10,7 @@ This skill targets the **current or last** lesson. For retention checks on
 
 ## Instructions
 
-1. Read `.data/STUDENT.md` if it exists. Identify the target: the **current lesson** in `curriculum/CURRICULUM.md`, or the last completed lesson if they ask to review that. Lean quiz questions toward Skills-table rows with status `shaky` (and toward growth areas) when they overlap this lesson.
+1. Read `.data/STUDENT.md` if it exists. Identify the target: the **current lesson** in `curriculum/CURRICULUM.md`, or the last completed lesson if they ask to review that. If a saved plan for that lesson exists under `.data/.lessons/`, read it so questions target what was actually taught and shown. Lean quiz questions toward Skills-table rows with status `shaky` (and toward growth areas) when they overlap this lesson.
 2. Ask 3–5 short questions (teach-back, “what would happen if…”, or “why this way”). Prefer spoken/written answers over coding at first.
 3. Score each idea briefly: solid / shaky / missing. Name misconceptions in plain language.
 4. Give **one** remediation exercise they type themselves for the weakest gap.
