@@ -4,6 +4,8 @@ This folder turns Claude Code into a coding tutor. You say what you want to lear
 
 You do not need to know how to program already. You do not need to design the course yourself.
 
+NOTE: While this tool is designed for Claude, it also works well with the free edition of Copilot in VSCode. Just open your project in VSCode and go! For best results, set the permissions at the bottom of the chat window to "Allow All."
+
 ## Get started
 
 1. Copy this project to a place you will keep your learning work.
