@@ -34,8 +34,17 @@ skill that separates self-taught devs who finish from those who quit.
 
 `.data/SESSIONS.md` now exists (minimal, for `review`). Grow it into a real
 picture the tutor acts on: "shaky on async across three sessions — change
-approach," "two-week gap — warm up harder." Also enables clean mid-lesson
-re-entry via the `Resume` note (partly wired into `teach-lesson` already).
+approach," "two-week gap — warm up harder."
+
+Clean mid-lesson re-entry is now done: `teach-lesson` authors a frozen lesson
+plan under `.data/.lessons/` on first delivery (see the `lesson-plan-format`
+skill) and, on resume, reloads it and picks up from its `## Progress` →
+`Resume at:` pointer (part-level) instead of regenerating a different version of
+the lesson. `complete-lesson` marks the plan `complete`; `adjust-curriculum`
+deletes stale non-complete plans; `mastertrack/complete-step.md` archives them.
+
+Possible follow-ups: cross-session pattern detection (the "shaky across three
+sessions" signal above); a student-facing progress line.
 
 ---
 
@@ -46,7 +55,7 @@ re-entry via the `Resume` note (partly wired into `teach-lesson` already).
 Custom Python harness landed in `evals/` — see `evals/README.md`. Two layers:
 static lint (frontmatter, name/dir, dangling refs, links, README drift; free) and
 behavioural scenarios driving headless `claude -p` in sandboxed fixtures with
-file-state + transcript + LLM-judge assertions. v1 ships 9 scenarios (4 in the
+file-state + transcript + LLM-judge assertions. It ships 10 scenarios (5 in the
 `--fast` CI subset) and a GitHub Actions workflow. `claude plugin eval` was set
 aside — early-access, undocumented interface, needs plugin structure first (#5);
 the behavioural runner is kept swappable.
@@ -110,8 +119,6 @@ IDE" pitch.
 
 ## Quick wins
 
-- **Typo** in `.claude/skills/teach-lesson/SKILL.md`: "add a smaller warm-up
-  first if the jump is large.s" — trailing `.s`.
 - **Student-facing progress line** — `CURRICULUM.md` has `# Current lesson:` but
   no "you are 12/40 lessons, 3 sections done" summary for motivation. Cheap to
   generate.
@@ -119,5 +126,3 @@ IDE" pitch.
   in `teach-lesson`; it gets messy across a long course.
 - **Pin the `tutor-review` ceiling** (beginner/intermediate/advanced) in
   `STUDENT.md` instead of re-inferring it from soft signals every review.
-- **Resume/troubleshooting section in the README** for the learner ("how do I
-  pick up where I left off?").

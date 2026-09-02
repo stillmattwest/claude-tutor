@@ -7,7 +7,7 @@ description: Writes the lesson summary, updates .data/STUDENT.md mastery, and ad
 
 ## Instructions
 
-**Short course** (`curriculum/CURRICULUM.md` has `**Type:** short course`): it has no sections and lesson IDs are `1`–`5`. Do steps 1, 3, 5, 6 as written. For step 2 the summary path is flat — `curriculum/lesson_summaries/N-lesson-slug.md`, no section folder. For step 4, just move `# Current lesson:` to the next number. When the lesson finished is the **last** one, set `# Current lesson:` to a "short course complete" note and follow the **End of the short course** handoff in the `short-course` skill (celebrate, then offer the three next-step options and let them sit with it), then stop — do **not** run `section-review` or `complete-step.md`.
+**Short course** (`curriculum/CURRICULUM.md` has `**Type:** short course`): it has no sections and lesson IDs are `1`–`5`. Do steps 1, 3, 4, 6, 7 as written, except both paths are flat — the summary in step 2 is `curriculum/lesson_summaries/N-lesson-slug.md` and the saved lesson plan in step 4 is `.data/.lessons/N-lesson-slug.md`, no section folder. For step 5, just move `# Current lesson:` to the next number. When the lesson finished is the **last** one, set `# Current lesson:` to a "short course complete" note and follow the **End of the short course** handoff in the `short-course` skill (celebrate, then offer the three next-step options and let them sit with it), then stop — do **not** run `section-review` or `complete-step.md`.
 
 1. Confirm the current lesson’s **end goal** in `curriculum/CURRICULUM.md` is met. If not, stop and say what is still missing.
 2. Create the summary file (create the section folder if needed):
@@ -23,16 +23,18 @@ description: Writes the lesson summary, updates .data/STUDENT.md mastery, and ad
    - **What you built** — files or artifacts they created
    - **Open questions** — optional; omit the section if none
 
-4. Update the `# Current lesson:` line at the top of `curriculum/CURRICULUM.md` to the next lesson, if there is one. If this was the last lesson in a section and the section end goal is met, follow the `section-review` skill **before** archiving anything (section-review still needs the live `CURRICULUM.md`). If this was the last lesson of the **last** section (the course is finished):
+4. Finalize the saved lesson plan at `.data/.lessons/<NN-section-slug>/<N.N-lesson-slug>.md` if it exists (per `lesson-plan-format`): set `Status:` to `complete`, tick every `## Progress` item, and set `Resume at: Done`. **Keep the file** — do not delete it.
+5. Update the `# Current lesson:` line at the top of `curriculum/CURRICULUM.md` to the next lesson, if there is one. If this was the last lesson in a section and the section end goal is met, follow the `section-review` skill **before** archiving anything (section-review still needs the live `CURRICULUM.md`). If this was the last lesson of the **last** section (the course is finished):
    - **Map exists and `.data/IN_MASTERTRACK_CURRICULUM` is `on`:** after section-review, follow `.claude/skills/mastertrack/complete-step.md`. Do not treat the journey as over. Do not write the next course.
    - **No map, or flag `off` / missing:** set the current-lesson line to a clear “complete” note as usual.
-5. Follow the `student-profile` skill: set this lesson’s Skills-table row to `mastered` or `shaky` from how independently they finished, set the next lesson to `learning` if needed, and refresh strengths / growth areas if a pattern showed up. Also set that row’s **Last reviewed** to this lesson’s ID and its **Review** bucket to `soon` (spacing columns for the `review` skill; see `student-profile-format`).
-6. Record the finished lesson in `.data/SESSIONS.md` (per `session-log-format`).
-7. Do this bookkeeping without waiting to be asked. Then tell the student the lesson is done and what the next lesson is — unless `complete-step.md` ran, in which case wait after the celebration.
+6. Follow the `student-profile` skill: set this lesson’s Skills-table row to `mastered` or `shaky` from how independently they finished, set the next lesson to `learning` if needed, and refresh strengths / growth areas if a pattern showed up. Also set that row’s **Last reviewed** to this lesson’s ID and its **Review** bucket to `soon` (spacing columns for the `review` skill; see `student-profile-format`).
+7. Record the finished lesson in `.data/SESSIONS.md` (per `session-log-format`).
+8. Do this bookkeeping without waiting to be asked. Then tell the student the lesson is done and what the next lesson is — unless `complete-step.md` ran, in which case wait after the celebration.
 
 ## Do not
 
 - Advance if the end goal is not met.
 - Overwrite an existing summary unless correcting a mistake the student agrees with.
+- Delete the saved lesson plan — mark it `complete` and leave it in place.
 - Start teaching the next lesson in the same breath as a long dump — name it, then wait for them to begin.
 - After a mastertrack course ends, auto-start the next map item or write the next `CURRICULUM.md`.

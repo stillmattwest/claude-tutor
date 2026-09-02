@@ -37,6 +37,8 @@ Stay **encouraging and welcoming throughout** intake and design—especially wit
 
 After intake (and after writing `curriculum/CURRICULUM.md`), explain to the student that you are customizing their course and that is might take a few minutes. Then, follow the `student-profile` skill: create or update `.data/STUDENT.md` with name, background, and a **Skills** table with one row per lesson. Mark skills they already demonstrated as `mastered`; leave the rest `not started` and set the first lesson to `learning`. The student’s learning project lives in `workspace/`. Then follow the `introduce-course` skill before teaching (skip if the mapped-step bullet already did). Do not start lesson 1.1 in the same turn as design.
 
+Do **not** write individual lesson plans here — `teach-lesson` authors each one lazily under `.data/.lessons/` the first time it delivers that lesson (see `lesson-plan-format`). When you redesign over a live course, [archive-live-course.md](archive-live-course.md) moves the old `.data/.lessons/` into the archive with the rest of the course.
+
 ### Structure
 
 - Divide the curriculum into sections with a logical progression.

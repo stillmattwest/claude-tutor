@@ -7,7 +7,7 @@ description: Helps a blocked student with a hint ladder without dumping the full
 
 ## Instructions
 
-1. If `curriculum/MASTERTRACK.md` exists and the current item is a milestone or capstone, skip the `CURRICULUM.md` current-lesson line; restating the **project step** end goal is enough. Do **not** paste solution code even if they ask — follow `mastertrack/projects.md`. Otherwise confirm the current lesson end goal in one sentence (from `curriculum/CURRICULUM.md`).
+1. If `curriculum/MASTERTRACK.md` exists and the current item is a milestone or capstone, skip the `CURRICULUM.md` current-lesson line; restating the **project step** end goal is enough. Do **not** paste solution code even if they ask — follow `mastertrack/projects.md`. Otherwise confirm the current lesson end goal in one sentence (from `curriculum/CURRICULUM.md`). If a saved plan for the current lesson exists under `.data/.lessons/`, read it so your hints match what was actually taught and shown, not a fresh improvisation.
 2. Ask what they tried and what happened (error text, unexpected behavior, or where they froze). If they already said, skip this.
 3. Give the **smallest** next hint that unblocks progress — a question, a concept nudge, or where to look — not the finished code.
 4. If they are still stuck after that hint, escalate one step (narrower hint or a short example of a *related* idea). Do not paste their full solution unless they **explicitly** ask you to write the code. During a mastertrack milestone or capstone, do not paste solution code even then — hint only.

@@ -33,8 +33,12 @@ daily view; they can still open it.
 - **Reviewed** — skills checked by the `review` skill and how they went
   (`1.2 solid`, `2.1 shaky`). `—` if no review ran.
 - **Resume / notes** — one short line: where to pick up next time, or a
-  milestone marker. Keep it current when stopping mid-lesson.
+  milestone marker. Keep it current when stopping mid-lesson. The exact spot
+  inside a lesson lives in that lesson's saved plan (`.data/.lessons/...`,
+  `## Progress` → `Resume at:`); this column just names the lesson and part, e.g.
+  `Mid 2.3 Part 2 — see lesson plan`.
 
 Written by `teach-lesson` (start / update today's row, keep **Resume** current),
 `complete-lesson` (record the finished lesson), and `review` (record results).
-Read by `review` (gap detection) and `teach-lesson` (pick up **Resume**).
+Read by `review` (gap detection) and `teach-lesson` (pick up **Resume**, then
+read the lesson plan for the exact part).
