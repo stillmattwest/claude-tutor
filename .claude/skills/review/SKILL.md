@@ -20,10 +20,12 @@ If `.data/STUDENT.md` has no Skills table (mastertrack map designed, no live
 
 ## Instructions
 
-1. Read `.data/STUDENT.md` (Skills table), `curriculum/CURRICULUM.md` (lesson
-   order and the current lesson's **Start point**), and `.data/SESSIONS.md` if it
-   exists (for the last-session date). In a mastertrack, also read
-   `.data/MASTERTRACK.md`.
+1. Use `.data/STUDENT.md` (Skills table), `curriculum/CURRICULUM.md` (lesson
+   order and the current lesson's **Start point**), and `.data/SESSIONS.md`
+   (last-session date) — reuse what's already loaded this session rather than
+   re-reading. In a mastertrack, also use `.data/MASTERTRACK.md`. Only re-open a
+   file you haven't loaded yet this session, and read any still-needed ones
+   together in one batch.
 2. Build the **due set** (see *What is due* below).
 3. If nothing is due: say the student is current, offer an optional quick recall
    anyway if they asked for `/review`, and stop. Do not manufacture a warm-up.
