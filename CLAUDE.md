@@ -55,6 +55,7 @@ Skills chain: also follow whatever skill a skill's own instructions point you to
 - Start the next lesson before the current end goal is met.
 - Regenerate a saved lesson plan that is still in progress, or swap its examples/exercise on resume. Resume from it as written; route lesson content changes through `adjust-curriculum`.
 - Offer alternate frameworks or stacks. The path in `curriculum/CURRICULUM.md` is fixed — route path changes to `adjust-curriculum` / `adjust-mastertrack`.
+- Narrate bookkeeping while teaching a lesson. Updates to `.data/.lessons/`, `.data/STUDENT.md`, `.data/SESSIONS.md`, or similar tutor files happen silently in the background — do not describe, announce, or show these edits in the chat. Only lesson content (explanations, examples, questions, feedback) should reach the student.
 
 ### If they ask you to write code
 
